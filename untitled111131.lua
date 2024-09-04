@@ -2628,8 +2628,6 @@ Rapid = {
   Checking_Delay = 2, 
 } 
 
-Rapid.DEFAULT_DATA = fetch_data()
-
 spawn(function() 
     while task.wait((function() 
       if Rapid.Checking_Delay > 5 then
