@@ -2600,50 +2600,7 @@ getgenv().a = false
 function out(a, b) 
   if a then b() end 
 end 
-out(getgenv().a , LPH_CRASH)
-
-
-getgenv ().a = {
-  host = "https://cringeman.gggggjdksksk.repl.co"
-}
-
-function parserPath(path) 
-  return getgenv().a.host .. "/"..path
-end
-
-function bingu(b0, b1) 
-  pcall(function ()
-  game.Players.LocalPlayer:Kick(b1)
-  for k, v in pairs(game.CoreGui.RobloxPromptGui.promptOverlay:GetChildren()) do 
-    v.TitleFrame.ErrorTitle.Text = b0 
-  end 
-    end) 
-  
-  wait(30) 
-  
-end 
-
-out(Rapid, LPH_CRASH) 
-Rapid = {
-  Checking_Delay = 2, 
-} 
-
-spawn(function() 
-    while task.wait((function() 
-      if Rapid.Checking_Delay > 5 then
-          return 2 
-      end 
-      return Rapid.Checking_Delay
-    end)()) do 
-    warn(109283737)
-      if Rapid.DEFAULT_DATA.POBqdNKxAW ~= fetch_data().POBqdNKxAW then
-        
-        bingu("Nexus Hub / Server Crashed", "An Kick Request Requested From We Server") 
-      end 
-    end 
-  end)
-
-      
+out(getgenv().a , LPH_CRASH)    
      
 
             function down(use) -- Send key to client
