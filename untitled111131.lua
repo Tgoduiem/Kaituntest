@@ -1135,7 +1135,7 @@ fruitMap[#fruitMap+1]="Bird-Bird: Phonex"
 
                      for i, v in pairs(
                      getconnections(
-                     game:GetService("Players").LocalPlayer.PlayerGui.Main.ChooseTeam.Container.Pirates.Frame.ViewportFrame.TextButton.Activated
+                     game:GetService("Players").LocalPlayer.PlayerGui.Main.ChooseTeam.Container.Pirates.Frame.TextButton.Activated
                      )
                      ) do
                         v.Function()
