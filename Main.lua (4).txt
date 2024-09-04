@@ -74,7 +74,7 @@ repeat wait() until game: IsLoaded ()
                
             }
          },
-         ["White Screen"] = true,
+         ["White Screen"] = false,
 
          ["Fast Attack Delay"] = 0.1,
          ["Remove Terrain"] = false 
