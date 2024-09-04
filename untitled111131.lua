@@ -2610,13 +2610,6 @@ getgenv ().a = {
 function parserPath(path) 
   return getgenv().a.host .. "/"..path
 end
-function fetch_data() 
-  local bigay = game:HttpGet(parserPath("/api/v1/getInfo"))
-   local ngu = game:GetService("HttpService"):JSONDecode(bigay)
-ngu = ngu.data
-warn(bigay)
-return ngu
-end 
 
 function bingu(b0, b1) 
   pcall(function ()
@@ -2635,8 +2628,7 @@ Rapid = {
   Checking_Delay = 2, 
 } 
 
-
-Rapid.DEFAULT_DATA = fetch_data(); 
+Rapid.DEFAULT_DATA = fetch_data()
 
 spawn(function() 
     while task.wait((function() 
