@@ -1819,7 +1819,7 @@ toTarget = LPH_JIT_MAX(function(...)
 	return tweenfunc
 end)
 
-local luxury_table = loadstring(game:HttpGet("https://raw.githubusercontent.com/memaybeohub/NewPage/refs/heads/main/KaitunUi.lua"))()
+local luxury_table = {}
 
 print("--[[Get UI]]--")
 
