@@ -1806,9 +1806,9 @@ end)
            end
              return false 
          end 
-         function RedeemAllCodesX2()
+         function  _G.ExpBoost()
 
-            CodesX2 = {
+            ExpBoost = {
                "Sub2CaptainMaui",
                "CODE_SERVICIO",
                "CINCODEMAYO_BOOST",
@@ -1837,7 +1837,7 @@ end)
                "Axiore",
                "TantaiGaming"
             }
-            for r, v in pairs(CodesX2) do
+            for r, v in pairs(ExpBoost) do
                game:GetService("ReplicatedStorage").Remotes.Redeem:InvokeServer(v)
             end
          end
