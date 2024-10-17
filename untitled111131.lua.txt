@@ -1460,6 +1460,8 @@ function moctui(r)
   end 
   return false
 end 
+pcall(function ()
+--loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
 end)
 function getsortedmon()
     local beo = game.Players.LocalPlayer
