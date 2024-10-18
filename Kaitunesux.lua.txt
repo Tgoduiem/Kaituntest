@@ -486,11 +486,6 @@ if NameMelee() == meleetable4[melee] then return true end
          if c().Misc.Ui then
  
 
-local repo = 'https://raw.githubusercontent.com/violin-suzutsuki/LinoriaLib/main/'
-
-local Library = loadstring(game:HttpGet(repo .. 'Library.lua'))()
-local ThemeManager = loadstring(game:HttpGet(repo .. 'addons/ThemeManager.lua'))()
-local SaveManager = loadstring(game:HttpGet(repo .. 'addons/SaveManager.lua'))()
 
 
 local Window = Library:CreateWindow({
@@ -622,63 +617,6 @@ Kaitan:AddButton("Show Item", function()
 		end
 		function GetXY(vec) 
 			return vec*100
-		end
-
-		local tvk = Instance.new("UIListLayout")
-		tvk.FillDirection = Enum.FillDirection.Vertical
-		tvk.SortOrder = 2
-		tvk.Padding = UDim.new(0,10)
-
-		local Left = Instance.new("Frame",game.Players.LocalPlayer.PlayerGui.BubbleChat)
-		Left.BackgroundTransparency = 1
-		Left.Size = UDim2.new(.5,0,1,0) 
-		tvk.Parent = Left
-
-		local Right = Instance.new("Frame",game.Players.LocalPlayer.PlayerGui.BubbleChat)
-		Right.BackgroundTransparency = 1
-		Right.Size = UDim2.new(.5,0,1,0) 
-		Right.Position = UDim2.new(.6,0,0,0)
-		tvk:Clone().Parent = Right
-		for k,v in pairs(allitem) do 
-			local cac = Instance.new("Frame",Left)
-			cac.BackgroundTransparency = 1
-			cac.Size = UDim2.new(1,0,0,0) 
-			cac.LayoutOrder = table.find(RaityLevel,k)
-
-			local cac2 = Instance.new("Frame",Right)
-			cac2.BackgroundTransparency = 1
-			cac2.Size = UDim2.new(1,0,0,0) 
-			cac2.LayoutOrder = table.find(RaityLevel,k)
-
-			local tvk = Instance.new("UIGridLayout",cac)
-			tvk.CellPadding = UDim2.new(.005,0,.005,0)
-			tvk.CellSize =  UDim2.new(0,70,0,70)
-			tvk.FillDirectionMaxCells = 100
-			tvk.FillDirection = Enum.FillDirection.Horizontal
-
-			local ccc = tvk:Clone()
-			ccc.Parent = cac2
-			for k,v in pairs(v) do 
-				if Items[v.ItemName.Text] and Items[v.ItemName.Text].Mastery then 
-					if v.ItemLine2.Text~="Accessory" then 
-						local bucac = v.ItemName:Clone()
-						bucac.BackgroundTransparency = 1
-						bucac.TextSize = 10
-						bucac.TextXAlignment  = 2
-						bucac.TextYAlignment  = 2
-						bucac.ZIndex  = 5
-						bucac.Text = Items[v.ItemName.Text].Mastery
-						bucac.Size = UDim2.new(.5,0,.5,0)
-						bucac.Position = UDim2.new(.5,0,.5,0)
-						bucac.Parent = v
-					end
-					v.Parent = cac
-				elseif v.ItemLine2.Text == "Blox Fruit" then 
-					v.Parent = cac2
-				end
-			end
-			cac.AutomaticSize = 2
-			cac2.AutomaticSize = 2
 		end
 		local ListHuhu = {
 			["Superhuman"] = Vector2.new(3,2),
@@ -1355,10 +1293,6 @@ function moctui(r)
   end 
   return false
 end 
-
-pcall(function ()
---loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
-end)
 function getsortedmon()
     local beo = game.Players.LocalPlayer
     local memay = beo.Character:WaitForChild"HumanoidRootPart"
