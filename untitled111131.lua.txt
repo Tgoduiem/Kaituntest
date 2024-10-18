@@ -1,7 +1,3 @@
-
--- DO NOT REMOVE ANY KEY BE ABOVE THIS CONFIG IF YOU DON'T TOMORROW YOU WILL RECEIVE IT (gg trans) / KO ĐC XOÁ BẤT KỲ KEY NÀO TRONG CÁI CONFIG NÀY NẾU KO NGÀY MAI KHI CHECK ACC KHÓC K KỊP =)))
--- TYPE CỦA KEY NẾU THAY THÌ PHẢI THAY ĐÚNG TYPE (BOOL = BOOL) THAY BẰNG CÁI KHÁC LÀ BÚ LOL NHÉ EM
--- vd: ["V2 Race"] = true ---sửa--> ["V2 Race"] = "false" -> bú cặc
 repeat wait() until game: IsLoaded () 
 
 
@@ -589,111 +585,6 @@ if NameMelee() == meleetable4[melee] then return true end
             end
          end
          if c().Misc.Ui then
- 
-
-local repo = 'https://raw.githubusercontent.com/violin-suzutsuki/LinoriaLib/main/'
-
-local Library = loadstring(game:HttpGet(repo .. 'Library.lua'))()
-local ThemeManager = loadstring(game:HttpGet(repo .. 'addons/ThemeManager.lua'))()
-local SaveManager = loadstring(game:HttpGet(repo .. 'addons/SaveManager.lua'))()
-
-
-local Window = Library:CreateWindow({
-
-    Title = 'Nexus Community Free Scripts '..os.date("%d".." ".."%B".." ".."%Y"),
-
-    Center = true, 
-    AutoShow = true, 
-    TabPadding = 8,
-    MenuFadeTime = 0.2
-})
-local Tabs = {
-    Main = Window:AddTab('Con Me May Bel'), 
-} 
---ThemeManager:ApplyTheme(game:GetService"HttpService":JSONDecode('{"FontColor":"ffffff","MainColor":"191925","AccentColor":"6759b3","BackgroundColor":"16161f","OutlineColor":"323232"}'))
-local LeftGroupBox2 = Tabs.Main:AddRightTabbox("Main")
-local CheckMelee = LeftGroupBox2:AddTab('Melee')
-
-local LeftGroupBox3 = Tabs.Main:AddRightTabbox("Main")
-local CheckSwords = LeftGroupBox3:AddTab('Swords')
-
-local LeftGroupBox9 = Tabs.Main:AddRightTabbox("Main")
-local CheckLegendSwords = LeftGroupBox9:AddTab('Legendary Swords')
-
-local Main1 = Tabs.Main:AddLeftTabbox("Main")
-local Info = Main1:AddTab('Info')
-local Kaitan = Main1:AddTab('Kaitan')
-
--- local LeftGroupBox6 = Tabs.Main:AddLeftTabbox("Ma")
--- local Main = LeftGroupBox6:AddTab('GaySex')
--- 
-local LeftGroupBox7 = Tabs.Main:AddLeftTabbox("GaysEx")
-lmlmlmlmkmlmlkk = LeftGroupBox7:AddTab"Status" 
-
-clockm = lmlmlmlmkmlmlkk:AddLabel"Still Updating..."
-waid1 = lmlmlmlmkmlmlkk:AddLabel"What Im I Doing?"
-waid2 = lmlmlmlmkmlmlkk:AddLabel"What Im I Doing 2 ?"
-mgstat = lmlmlmlmkmlmlkk:AddLabel"Mirage Status: Updating"
-fmstat = lmlmlmlmkmlmlkk:AddLabel"Full Moon Status: Updating"
-elitestt = lmlmlmlmkmlmlkk:AddLabel"Elite Spawn: Updating"
-
-dismcount= lmlmlmlmkmlmlkk:AddLabel"Dismention Count: Updating"
-
-local LeftGroupBox8 = Tabs.Main:AddLeftTabbox("Main")
-local CheckQuest = LeftGroupBox8:AddTab('Unlock Quest')
-
-local LeftGroupBox4 = Tabs.Main:AddLeftTabbox("Main")
-local CheckGun = LeftGroupBox4:AddTab('Guns')
-
-Info:AddLabel("Nexus Community Kaitun Script") 
-    Time = Info:AddLabel("ServerTime")
-    function UpdateTime()
-        local GameTime = math.floor(workspace.DistributedGameTime+0.5)
-        local Hour = math.floor(GameTime/(60^2))%24
-        local Minute = math.floor(GameTime/(60^1))%60
-        local Second = math.floor(GameTime/(60^0))%60
-        Time:SetText("Hour "..Hour.." Minute "..Minute.." Second "..Second)
-    end
-    function MoonTextureId()
-    if Sea1 then
-        return game:GetService("Lighting").FantasySky.MoonTextureId
-    elseif Sea2 then
-        return game:GetService("Lighting").FantasySky.MoonTextureId
-    elseif Sea3 then
-        return game:GetService("Lighting").Sky.MoonTextureId
-    end
-end
-
-Kaitan:AddToggle('KaitanF', {
-    Text = 'Start Kaitan',
-    Default = true,
-})
-
-Toggles.KaitanF:OnChanged(function(value)
-    getgenv().ForceStop = not value
-end)
-Shisui = CheckLegendSwords:AddLabel("[-] : Shisui Sword")
-Saddi = CheckLegendSwords:AddLabel("[-] : Saddi Sword")
-Wando = CheckLegendSwords:AddLabel("[-] : Wando Sword")
-
-
-Kaitan:AddButton("Show Item", function()
-    local cac = require(game:GetService("Players").LocalPlayer.PlayerGui.Main.UIController.Inventory)
-		local Inventory = game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("getInventory")
-		local Items = {}
-		local RaityLevel = {"Mythical","Legendary","Rare","Uncommon","Common"}
-		local RaityColor =  {
-			["Common"] = Color3.fromRGB(179, 179, 179),
-			["Uncommon"] = Color3.fromRGB(92, 140, 211),
-			["Rare"] =  Color3.fromRGB(140, 82, 255),
-			["Legendary"] = Color3.fromRGB(213, 43, 228) ,
-			["Mythical"] =  Color3.fromRGB(238, 47, 50)
-		}
-		function GetRaity(color)
-			for k,v in pairs(RaityColor) do 
-				if v==color then return k end
-			end
-		end
 
 		for k,v in pairs(Inventory) do 
 			Items[v.Name] = v
@@ -807,10 +698,7 @@ Kaitan:AddButton("Show Item", function()
 		local cac = {"Superhuman","ElectricClaw","DragonTalon","SharkmanKarate","DeathStep","GodHuman"}
 		for k,v in pairs(cac) do
 			if ListHuhu[v] and game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Buy"..v,true) == 1 then 
-				local huhu = Instance.new("ImageLabel",MeleeG)
-				huhu.Image = "rbxassetid://9945562382"
-				huhu.ImageRectSize = Vector2.new(100,100)
-				huhu.ImageRectOffset = ListHuhu[v]*100
+			
 			end
 		end
 		function formatNumber(v)
@@ -842,33 +730,9 @@ Kaitan:AddButton("Show Item", function()
 			game:GetService("Players").LocalPlayer.PlayerGui.Main.Compass:Destroy()
 		end)
 end)
-Kaitan:AddButton('Rejoin Server', function()
+function()
     game:GetService("TeleportService"):Teleport(game.PlaceId, game:GetService("Players").localPlayer)
 end)
-
-Kaitan:AddToggle('Condi', {
-    Text = 'White Screen',
-    Default = true,
-})
-
-Toggles.Condi:OnChanged(function(value)
-  
-    if value then 
-        game:GetService"RunService":Set3dRenderingEnabled(true) 
-    return; 
-    end 
-    game:GetService"RunService":Set3dRenderingEnabled(false)
-end) 
-
-Kaitan:AddToggle('Condi2', {
-    Text = 'Chest Farm',
-    Default = false,
-})
-
-Toggles.Condi2:OnChanged(function(value)
-  getgenv().Config.ChestFarm = value
-end) 
-
 
 
 PlayerName = Info:AddLabel("Player Name: "..game.Players.LocalPlayer.Name) 
