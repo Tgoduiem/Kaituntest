@@ -74,7 +74,7 @@ repeat wait() until game: IsLoaded ()
                
             }
          },
-         ["White Screen"] = true,
+         ["White Screen"] = false,
 
          ["Fast Attack Delay"] = 0.1,
          ["Remove Terrain"] = false 
@@ -1460,28 +1460,6 @@ function moctui(r)
   end 
   return false
 end 
-pcall(function ()
---loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
-end)
-function getsortedmon()
-    local beo = game.Players.LocalPlayer
-    local memay = beo.Character:WaitForChild"HumanoidRootPart"
-    local chim = workspace.Enemies: GetChildren ()
-    local bamaysuccac = {} 
-    for i, v in pairs(chim) do 
-      if v.Name ~= "PirateBasic" and v.Name ~= "PirateBrigade" and v:FindFirstChild"HumanoidRootPart" then 
-        table.insert(bamaysuccac, v) 
-       end
-      end
-    table.sort(bamaysuccac, function(aL, aM)
-      
-        return beo: DistanceFromCharacter(aL.HumanoidRootPart.Position) < beo: DistanceFromCharacter (aM.HumanoidRootPart.Position) 
-    end)
-   
-   return bamaysuccac
-
--- return bamaysuccac or game.Workspace.Enemies:GetChildren()
-end
 
 function whatismyrace() 
   return game:GetService("Players").LocalPlayer.Data.Race.Value 
