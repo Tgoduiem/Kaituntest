@@ -3940,7 +3940,6 @@ elseif CheckSea(3) and c().Main['Soul Guitar'] and type(game:GetService("Replica
                      elseif   CheckSea(1) and getPlayerLevel() < 700 and getPlayerLevel() > 60 and game.ReplicatedStorage.Remotes["CommF_"]:InvokeServer("PlayerHunter")  ~=  "I don't have anything for you right now. Come back later." and c().Main["Fast Method"]  then
                         if not dimemi  then grhsksjehjrjdjdjsks = os.time() end
                         dimemi = true
-                        set"Doing Player Hunter Quest"
                       
                         st = 1
                         local v6 = game.ReplicatedStorage.Remotes["CommF_"]:InvokeServer("PlayerHunter")
@@ -4012,7 +4011,7 @@ dmlockskill = false
                            return 
                            end
                               elseif (CheckSea(2) and c().Main["Quest / Race V3"] and getPlayerBeli() > 2000000 and not moctui(3) and table.find(backi, whatismyrace())  and ( (whatismyrace() == "Human" and (not pork or throughcheck(pork, 0, CheckBoss))))) and uable["FlamingoAccess"]then 
-                             set("Doing V3 Race Quest ")
+                        
                          
                              local wtf = whatismyrace()  
                              sh() 
@@ -4158,7 +4157,6 @@ repeat wait ()
                         elseif   CheckSea(2) and getPlayerLevel() > 1100 and uable["FlamingoAccess"] and CheckBoss"Don Swan" and zqp  == nil  then
                       
                            local v54 = CheckBoss"Don Swan"
-                           set("Attempt To Farming "..v54.Name.." [Swan Quests]")
                            if v54  then
                               repeat wait()
                               
@@ -4174,7 +4172,6 @@ repeat wait ()
                            game:GetService("ReplicatedStorage").Remotes["CommF_"]:InvokeServer("ZQuestProgress","Begin")
 
                            v53 = CheckBoss("rip_indra")
-                           set("Attempt To Farming "..v53.Name.." [3rd Sea]")
                            if v53  then
                               repeat wait()
                       
@@ -4330,7 +4327,7 @@ repeat wait ()
                                 end)
                               
                              elseif  CheckSea(3) and ((checkitem"God's Chalice" and CheckMaterialCount"Conjured Cocoa" > 9) or (getPlayerLevel() > 2449 and c().Main["Auto Farming Cake Prince If Max Level"]["Enable"] and getPlayerFragments() < c().Main["Auto Farming Cake Prince If Max Level"]["Until"]) or checkitem"Sweet Chalice")  then
-               set"Auto Farm Katakuri After Max" 
+					
                 if c().Main["Misc / Hop"].Enable and os.time() - script_time > c().Main["Misc / Hop"].Delay and not checkitem"Sweet Chalice" then 
                              HopServer() 
                              return; 
