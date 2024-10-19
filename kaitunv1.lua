@@ -4582,12 +4582,10 @@ end)
                            if eltrul["Black Leg"] < 300 and NameMelee(true) ~= "Black Leg" then
                           
                               buyMelee("BlackLeg")
-                              set1("Waiting For Black Leg Hit 300 Mastery")
                            end
                            if eltrul["Black Leg"] > 299 and eltrul["Electro"] < 299 then
 
                               buyMelee("Electro")
-                              set1("Waiting For Electro Hit 300 Mastery")
                            end
                            if eltrul["Electro"] > 299 and eltrul["Fishman Karate"] < 299 then
 
@@ -4595,7 +4593,6 @@ end)
                               set1("Waiting For Fishman Karate Hit 300 Mastery")
                            end
                            if eltrul["Fishman Karate"] > 299 and eltrul["Dragon Claw"] < 299 then
-                             set1("Waiting For Dragon Claw Hit 300 Mastery")
                              
                               if lp.Data.Fragments.Value < 1500 and (NameMelee(true).Name~= "Dragon Claw" and not checkMelee"Dragon Claw")  then
                                  if not CheckSea(1) then
@@ -4605,27 +4602,22 @@ end)
                                     AutoRaid = true
                                     PullFruit = true
                                   
-                                    set1("Waiting For Dragon Claw Hit 300 Mastery")
                                  else
-                                    set1("Waiting For 2nd Sea (For Dragon Claw / Not Enough Fragments)")
                                     TeleportSea(2)
                                  end
 
                               end
                               
                               buyMelee("DragonClaw")
-                              set1("Waiting For Dragon Claw Hit 300 Mastery" )
                            end
                            if eltrul["Dragon Claw"] > 299 and eltrul["Superhuman"] < 400 then
                               buyMelee"Superhuman" 
-                              set1"Waiting For Superhuman Hit 300 Mastery"
                            end
                         --   print("ok", eltrul["Superhuman"],eltrul["Death Step"])
                            if eltrul["Superhuman"] > 399 and eltrul["Death Step"] < 400 then
                              print("ok2")
                               if eltrul["Black Leg"] < 400 then
                                  buyMelee"BlackLeg" 
-                                 set1("Waiting For Black Leg Hit 300 Mastery")
                               else
                                  if not checkMelee"DeathStep" then
                                     if getPlayerFragments() < 5000 and (NameMelee() ~= "Death Step" and not checkMelee"DeathStep") then
@@ -4640,7 +4632,6 @@ end)
                                        end
                                     end
                                  else
-                                       set1"Waiting For Death Step Hit 300 Mastery"
                                    
                                     buyMelee"DeathStep"
                                  end
@@ -4649,50 +4640,46 @@ end)
                            if eltrul["Death Step"] > 399 and eltrul["Sharkman Karate"] < 400 then
                               if eltrul["Fishman Karate"] < 400 then
                                  buyMelee"FishmanKarate" 
-                                 set1("Waiting For Fishman Karate Hit 300 Mastery")
                               else
                                  if not checkMelee"SharkmanKarate" then
                                     if getPlayerFragments() < 5000 then
                                        AutoRaid = true 
-                                      set1("Auto Raid Until Reach 5k Fragments")
                                        PullFruit = true
                                     else
                                  set1"Waiting For Beli Hit 3M+ [Sharkman Karare]"
                                        if getPlayerBeli() > 3000000 then
                                           buyMelee"SharkmanKarate"
-                                          
+
                                        end
                                     end
                                  else
                                     buyMelee"SharkmanKarate"
-                                    set1"Waiting For Sharkman Karare Hit 300 Mastery"
                                  end
                               end
                            end
                             if eltrul["Sharkman Karate"] > 399 and eltrul["Electric Claw"] < 400 then
                                if eltrul["Electro"] < 400 then 
                                  buyMelee"Electro" 
-                                 set1("Waiting For Electro Hit 300 Mastery")
                                else 
                                  if not checkMelee"FishmanKarate" and getPlayerFragments() < 5000 then 
                                    AutoRaid = true 
                                    PullFruit = true
                                  end 
                                  buyMelee"ElectricClaw" 
-                                 set1"Waiting For Player Beli Hit 3M+ [Electric Claw]"
+
                                end
                             end
                             if eltrul["Electric Claw"] > 399 and eltrul["Dragon Talon"] < 400 then
                                 if eltrul["Dragon Claw"] < 400 then 
-                                  set1"Waiting For Dragon Claw Hit 300 Mastery" 
+        
                                   buyMelee"DragonClaw" 
                                   else 
                                     if not checkMelee"DragonTalon" and getPlayerFragments() < 5000 then 
                                       AutoRaid = true 
                                       PullFruit = true 
-                                      set1"Auto Raiding Until Hit 5k Fragments [Dragon Talon]"
+                                
                                       else 
-                                        set1"Waiting For Dragon Talon Requirements [3M+ Beli / Fire Essence]" 
+        
                                         buyMelee"DragonTalon"
                                         end
                                   end 
@@ -4701,12 +4688,10 @@ end)
                               if not checkMelee"Godhuman" then 
                              buyMelee"ElectricClaw"
                          if getPlayerFragments() < 5000 and not checkMelee"Godhuman" then 
-                           set1"Auto Raid Until Hit 5k Fragments [Godhuman]"
                            AutoRaid = true 
                            PullFruit = true
                          end 
                          
-                         set1"Waiting For Player Beli Hit 5M+ [Godhuman]" 
                          buyMelee"Godhuman"
                        else 
            
