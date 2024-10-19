@@ -97,7 +97,7 @@ end
 
 function CheckQuest()
 		local Lv = game:GetService("Players").LocalPlayer.Data.Level.Value
-		if Old_World then
+		if World1 then
 			if game.Players.LocalPlayer.Data.Level.Value == 1 or game.Players.LocalPlayer.Data.Level.Value <= 9 or SelectMonster == "" then -- Bandit
 				Ms = "Bandit"
 				NameQuest = "BanditQuest1"
@@ -414,7 +414,7 @@ function CheckQuest()
 				Next_Level_X = 9999
 			end
 		end
-		if New_World then
+		if World2 then
 			if game.Players.LocalPlayer.Data.Level.Value == 700 or game.Players.LocalPlayer.Data.Level.Value <= 724 or SelectMonster == "Raider" then -- Raider
 				Ms = "Raider" 
 				NameQuest = "Area1Quest"
@@ -710,7 +710,7 @@ function CheckQuest()
 				SelectMonster = "Sea Soldier"
 			end
 		end
-		if Three_World then
+		if World3 then
 			if game.Players.LocalPlayer.Data.Level.Value >= 1500 and game.Players.LocalPlayer.Data.Level.Value <= 1524 or SelectMonster == "Pirate Millionaire" then -- Pirate Millionaire
 				Ms = "Pirate Millionaire"
 				NameQuest = "PiratePortQuest"
