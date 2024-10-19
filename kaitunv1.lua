@@ -4395,7 +4395,6 @@ repeat wait ()
                    
                    end
                              elseif  not game.Players.LocalPlayer.PlayerGui.Main.Timer.Visible and not AutoRaid  then 
-                           set"Level Farm" 
                            if c().Main["Misc / Hop"].Enable and os.time() - script_time > c().Main["Misc / Hop"].Delay and not checkitem"Sweet Chalice" then 
                              HopServer() 
                              return; 
