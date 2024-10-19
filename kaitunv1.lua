@@ -1060,7 +1060,6 @@ end
                until game.Players.LocalPlayer.Team ~= nil
             end
          end
-         TextLabel1.Text = "Items 2"
 
 
          --<---------- func ---------->--
