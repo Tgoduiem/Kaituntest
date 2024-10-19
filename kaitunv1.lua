@@ -4416,7 +4416,6 @@ if game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible  and os.t
     
     if mobName == (MobDual2 or "").."s"  then
         local checkMob = 0
-        for _, skull in ipairs(getsortedmon()) do 
           
             if skull.Name:gsub(" %pLv. %d+%p", "") == MobDual2  and skidymf(skull) then 
               local check172 = skull.Humanoid.Health
