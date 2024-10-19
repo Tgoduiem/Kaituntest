@@ -3953,7 +3953,6 @@ elseif CheckSea(3) and c().Main['Soul Guitar'] and type(game:GetService("Replica
                                  if dicac:FindFirstChild"Data" and dicac.Data.Level.Value > 20 and dicac.Character.Humanoid.MaxHealth < (game.Players.LocalPlayer.Character.Humanoid.Health + (getPlayerLevel()*1.4)*2) then
                                     dimemi = false
 
-                                    set("Skip Level: "..dicac.Name)
                                     starttime = os.time()
                                     iseltrulcool = false
                                     repeat game:GetService"RunService".Stepped:Wait() 
