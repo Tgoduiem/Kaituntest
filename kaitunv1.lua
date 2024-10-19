@@ -4427,7 +4427,6 @@ if game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible  and os.t
             end
         end
           
-        for _, skull in ipairs(getsortedmon()) do
             if skull.Name:gsub(" %pLv. %d+%p", "") == MobDual2  and skidymf(skull) then
                 checkMob = 1
                 
