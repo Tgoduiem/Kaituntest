@@ -1778,5 +1778,3 @@ spawn(function()
         end
     end
 end)
-
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Flontium2/Source/main/Destroy-Effect.lua"))()
