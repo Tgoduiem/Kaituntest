@@ -95,7 +95,7 @@ else
     game.Players.LocalPlayer:Kick("[Ganteng Hub] Only Support BF")
 end 
 
-function CheckLevel2()
+function CheckQuest()
 		local Lv = game:GetService("Players").LocalPlayer.Data.Level.Value
 		if Old_World then
 			if game.Players.LocalPlayer.Data.Level.Value == 1 or game.Players.LocalPlayer.Data.Level.Value <= 9 or SelectMonster == "" then -- Bandit
