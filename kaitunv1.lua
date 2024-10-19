@@ -2691,16 +2691,6 @@ noti"Shit"
                end
 
           end
-            function set(v)
-             TextLabel.Text = tostring(v)
-               m1 = v
-            end
-            function set1(v)
-             TextLabel1.Text = tostring(v)
-              
-               m2 = v
-            end
-
 function cdkstuff1() 
   
      
