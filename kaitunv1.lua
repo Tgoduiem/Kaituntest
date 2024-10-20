@@ -4532,7 +4532,7 @@ end)
                            if eltrul["Electro"] > 299 and eltrul["Fishman Karate"] < 299 then
 
                               buyMelee("FishmanKarate")
-                              set1("Waiting For Fishman Karate Hit 300 Mastery")
+        
                            end
                            if eltrul["Fishman Karate"] > 299 and eltrul["Dragon Claw"] < 299 then
                              
