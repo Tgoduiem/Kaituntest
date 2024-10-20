@@ -3789,7 +3789,7 @@ elseif CheckSea(3) and c().Main['Soul Guitar'] and type(game:GetService("Replica
                   until not skidymf(ayumimimimi)
                elseif  CheckSea(2)  and waterkeystuff   then
                   local ayumimimimi = CheckBoss"Tide Keeper"
-                  set("Attempt To Farming "..ayumimimimi.Name.." [Daigrock]")
+                
                   repeat wait()
                   warn(0)
                      to(getKillVector3(ayumimimimi.HumanoidRootPart.CFrame))
@@ -3802,7 +3802,7 @@ elseif CheckSea(3) and c().Main['Soul Guitar'] and type(game:GetService("Replica
                      HopServer() wait(9999)
                   end
                elseif  CheckSea(1) and getPlayerLevel() > 200 and not checkitem("Saber") and game:GetService("Workspace").Map.Jungle.Final.Part.CanCollide and c().Main["Item / Saber"]  then
-                  set"Doing Saber Quest"
+                  
                
                   if game:GetService("Workspace").Map.Jungle.QuestPlates.Door.CanCollide  then
                   
@@ -3821,7 +3821,7 @@ elseif CheckSea(3) and c().Main['Soul Guitar'] and type(game:GetService("Replica
 
 
                   elseif   game:GetService("Workspace").Map.Desert.Burn.Part.Transparency == 0  then
-                     --set("Doing Saber Quest 2: Firing Door On Desert")
+                     
                      if not checkitem("Torch")  then
                         to(game:GetService("Workspace").Map.Jungle.Torch.CFrame)
                      else
@@ -3834,7 +3834,7 @@ elseif CheckSea(3) and c().Main['Soul Guitar'] and type(game:GetService("Replica
 
 
                   elseif  game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("ProQuestProgress","SickMan") ~= 0  then
-                     --set("Doing Saber Quest 3: Killing Mob Leader [Boss]")
+                     
                      game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("ProQuestProgress","GetCup")
                      EquipWeaponName("Cup")
                      game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("ProQuestProgress","FillCup",game:GetService("Players").LocalPlayer.Character.Cup)
@@ -3862,7 +3862,7 @@ elseif CheckSea(3) and c().Main['Soul Guitar'] and type(game:GetService("Replica
                      
 
                   elseif   game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("ProQuestProgress","RichSon") == 1 and game:GetService("Workspace").Map.Jungle.Final.Part.CanCollide   then
-                    -- set("Doing Saber Final Quest: Using Relic")
+                    
                      game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("ProQuestProgress","RichSon")
                      EquipWeaponName("Relic")
                    repeat wait()
@@ -3874,7 +3874,7 @@ elseif CheckSea(3) and c().Main['Soul Guitar'] and type(game:GetService("Replica
              
                  
                   local v60 = CheckBoss("Saber Expert")
-                  set("Attempt To Farming Saber Expert [Saber]")
+                  
                   if v60  then
                      repeat wait()
                 
@@ -3889,13 +3889,13 @@ elseif CheckSea(3) and c().Main['Soul Guitar'] and type(game:GetService("Replica
 
                elseif  CheckSea(1) and getPlayerLevel() > 700 and game.ReplicatedStorage.Remotes.CommF_:InvokeServer("DressrosaQuestProgress", "Dressrosa") ~=
                   0  then
-                     set"Doing Dressrosa Quest"
+                     
                      if not checkitem("Saber") and not CheckBoss("Saber Expert")  then
                         set("Hop For Reason: Missing Saber, Hopping For Requirements")
                         HopServer() wait(9999)
                         return
                      end
-                     set("Doing 2nd Sea Quest")
+                     
 
                      if game.Workspace.Map.Ice.Door.CanCollide  then
                         if
