@@ -3562,7 +3562,7 @@ end
                      if game.Players.LocalPlayer.PlayerGui.Main.Quest.Visible == true  then
 
                         if string.find(game.Players.LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text, "Swan") and string.find(game.Players.LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text, "50")  then
-                           set("Doing Bartilo Quest 1: Killing 50x Swan Pirate")
+                        
                            pcall(function ()to(getMobLoadPos("Swan Pirate")*CFrame.new(0,50,5))end)
                            for i, v in pairs(getsortedmon()) do
                               if v.Name == "Swan Pirate"  then
@@ -3687,11 +3687,11 @@ end
                   end
                   storefruit()
                elseif  CheckSea(2) and rengokustat  then
-                  set"Using Hidden Key For Rengoku"
+                  
                   to(CFrame.new(6571.1201171875, 299.23028564453, -6967.841796875))
                   EquipWeaponName"Hidden Key"
                elseif  CheckSea(2) and librarydoor  then
-                  set"Using Library Key For Phoeyu"
+                  
                   to(CFrame.new(6376.93164, 296.760071, -6843.54932, -0.906182051, -1.26464874e-08, -0.422887832, -7.46116324e-09, 1, -1.39169662e-08, 0.422887832, -9.45606971e-09, -0.906182051))
                elseif  CheckSea(2) and not cls_7 and checkitem"Water Key"   then
                   set"Using Water Key For Daigrock"
@@ -3715,7 +3715,7 @@ end
                
                  
 elseif CheckSea(3) and c().Main['Soul Guitar'] and not checkitem"Soul Guitar" and game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("GuitarPuzzleProgress", "Check")  == nil and game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709149431" then
-set("Soul Guitar Start Quest [Dialoguing Gravestone]")
+
   if  game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("GuitarPuzzleProgress", "Check")  == nil then
 						game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("gravestoneEvent", 2)
 
@@ -3759,11 +3759,11 @@ elseif CheckSea(3) and c().Main['Soul Guitar'] and type(game:GetService("Replica
 										  task.wait(.2)
 										end
       elseif _a_a_a_a == "Ghost" then 
-         set("Soul Guitar 4st Quest [Ghost]")
+         
   			   game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("GuitarPuzzleProgress", "Ghost")
   			   game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("GuitarPuzzleProgress", "Ghost", true)
          elseif _a_a_a_a == "Trophies" then 
-           set("Soul Guitar 5st Quest [Trophies1]")
+          
     	     for _a_a_a_f, _a_a_a_g in pairs(game:GetService("Workspace").Map["Haunted Castle"].Tablet: GetChildren()) do 
     	       if _a_a_a_g:FindFirstChild"ClickDetector" and _a_a_a_g.Line.p.Y < -999 then 
     	         fireclickdetector(_a_a_a_g.ClickDetector)
