@@ -86,18 +86,18 @@ function check_frozen()
 end
 
 if game.PlaceId == 2753915549 then
-    World1 = true
+     Main = true
 elseif game.PlaceId == 4442272183 then
-    World2 = true
+     Dressrosa = true
 elseif game.PlaceId == 7449423635 then
-    World3 = true
+    Zou = true
 else
     game.Players.LocalPlayer:Kick("[Ganteng Hub] Only Support BF")
 end 
 
 function CheckQuest()
 		local Lv = game:GetService("Players").LocalPlayer.Data.Level.Value
-		if World1 then
+		if Main then
 			if game.Players.LocalPlayer.Data.Level.Value == 1 or game.Players.LocalPlayer.Data.Level.Value <= 9 or SelectMonster == "" then -- Bandit
 				Ms = "Bandit"
 				NameQuest = "BanditQuest1"
@@ -414,7 +414,7 @@ function CheckQuest()
 				Next_Level_X = 9999
 			end
 		end
-		if World2 then
+		if Dressrosa then
 			if game.Players.LocalPlayer.Data.Level.Value == 700 or game.Players.LocalPlayer.Data.Level.Value <= 724 or SelectMonster == "Raider" then -- Raider
 				Ms = "Raider" 
 				NameQuest = "Area1Quest"
@@ -710,7 +710,7 @@ function CheckQuest()
 				SelectMonster = "Sea Soldier"
 			end
 		end
-		if World3 then
+		if Zou then
 			if game.Players.LocalPlayer.Data.Level.Value >= 1500 and game.Players.LocalPlayer.Data.Level.Value <= 1524 or SelectMonster == "Pirate Millionaire" then -- Pirate Millionaire
 				Ms = "Pirate Millionaire"
 				NameQuest = "PiratePortQuest"
@@ -1116,41 +1116,99 @@ function CheckQuest()
 			end
 		end
 	end
-
-function topos(Pos)
-    Distance = (Pos.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
-    if Distance < 25 then
-        Speed = 3000
-    elseif Distance < 50 then
-        Speed = 1500
-    elseif Distance < 150 then
-        Speed = 600
-    elseif Distance < 250 then
-        Speed = 500
-    elseif Distance < 500 then
-        Speed = 275
-    elseif Distance < 750 then
-        Speed = 250
-    elseif Distance >= 1000 then
-        Speed = 325
-    end
-    game:GetService("TweenService"):Create(
-        game:GetService("Players").LocalPlayer.Character.HumanoidRootPart,
-        TweenInfo.new(Distance/Speed, Enum.EasingStyle.Linear),
-        {CFrame = Pos}
-    ):Play()
-end
-
-function Bypass(P1)
-    if (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - P1.Position).Magnitude >= 2000 then
-        pcall(function()
-            game.Players.LocalPlayer.Character.Head:Destroy()
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = P1
-            wait(1)
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = P1
-        end)
-    end
-end
+if game.Players.LocalPlayer.PlayerGui.Main.Quest.Visible == false then
+				local Lv = game.Players.LocalPlayer.Data.Level.Value
+				if game.Players.LocalPlayer.Data.Level.Value >= 10 and game.Players.LocalPlayer.Data.Level.Value <= 100 then
+					CheckLevel2()
+					game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text = NameMon
+					game.Players.LocalPlayer.PlayerGui.Main.Quest.Visible = true
+				else
+					CheckLevel2()
+					if not First_Quest then
+						if SelectMonster ~= nil then
+							First_Quest = true
+						end
+					else
+						SelectMonster = nil
+						First_Quest = false
+					end
+					repeat wait(.1)
+						TPX(CFrameQ)
+						if (CFrameQ.Position-game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 3 then
+							wait(1)
+							game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("StartQuest", NameQuest, QuestLv)
+							game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("SetSpawnPoint")
+						end
+					until game.Players.LocalPlayer.PlayerGui.Main.Quest.Visible == true or not Auto_Farm_Kaitun
+				end
+			end
+function TPX(RealTarget)
+		pcall(function()
+			local Distance = (RealTarget.Position - game:GetService("Players").LocalPlayer.Character:WaitForChild("HumanoidRootPart").Position).Magnitude
+			if Distance < 100 then
+				Speed = 1500
+			elseif Distance < 200 then
+				Speed = 1200
+			elseif Distance < 500 then
+				Speed = 515
+			elseif Distance < 1000 then
+				Speed = 315
+			elseif Distance >= 1000 then
+				Speed = 300
+			end
+			if Distance > 3000 and game.Players.LocalPlayer.Character.Humanoid.Health > 0 then
+				if Main and (Vector3.new(61163.8515625, 11.6796875, 1819.7841796875)-RealTarget.Position).Magnitude <= 2000 then
+					game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(61163.8515625, 11.6796875, 1819.7841796875))
+				elseif Main and (Vector3.new(-4607.82275, 872.54248, -1667.55688)-RealTarget.Position).Magnitude <= 2000 then
+					game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(-4607.82275, 872.54248, -1667.55688))
+				elseif Main and (Vector3.new(-7894.6176757813, 5547.1416015625, -380.29119873047)-RealTarget.Position).Magnitude <= 2000 then
+					game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(-7894.6176757813, 5547.1416015625, -380.29119873047))
+				elseif Dressrosa and (Vector3.new(923.21252441406, 126.9760055542, 32852.83203125)-RealTarget.Position).Magnitude <= 2000 then
+					game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(923.21252441406, 126.9760055542, 32852.83203125))
+				elseif Dressrosa and (Vector3.new(923.21252441406, 126.9760055542, 32852.83203125)-RealTarget.Position).Magnitude <= 2000 then
+					game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(923.21252441406, 126.9760055542, 32852.83203125))
+				elseif Main and (Vector3.new(-7894.6176757813, 5547.1416015625, -380.29119873047)-RealTarget.Position).Magnitude <= 2000 then
+					game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(-7894.6176757813, 5547.1416015625, -380.29119873047))
+				elseif Main and (Vector3.new(-2953.31884765625, 41.01357650756836, 2099.16943359375)-RealTarget.Position).Magnitude <= 2300 then
+					if Main and (Vector3.new(61163.8515625, 11.6796875, 1819.7841796875)-game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 2000 then
+						game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(-4607.82275, 872.54248, -1667.55688))
+					elseif Main and (Vector3.new(-7894.6176757813, 5547.1416015625, -380.29119873047)-game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 2000 then
+						game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(-4607.82275, 872.54248, -1667.55688))
+					end
+					TP(RealTarget)
+				elseif Main and (Vector3.new(3876.00366, 24.6882591, -3820.21777)-RealTarget.Position).Magnitude <= 1700 then
+					TP(RealTarget)
+				elseif Dressrosa and (Vector3.new(3876.00366, 24.6882591, -3820.21777)-RealTarget.Position).Magnitude <= 3000 then
+					TP(RealTarget)
+				elseif Dressrosa and List.Boss and Select_List_Boss == "Darkbeard" and Start_Kill_Boss then
+					TP(RealTarget)
+				elseif Zou and List.Boss and Select_List_Boss == "Cake Prince" and Start_Kill_Boss then
+					TP(RealTarget)
+				elseif Dressrosa and (Vector3.new(4768.3388671875, 8.318676948547363, 2868.102294921875)-RealTarget.Position).Magnitude <= 1700 then
+					TP(RealTarget)
+				elseif Dressrosa and (Vector3.new(-5219.4585, 58.2147713, 2384.21191)-RealTarget.Position).Magnitude <= 1200 then
+					TP(RealTarget)
+				elseif game.Players.LocalPlayer.Character.Humanoid.Health > 0 then 
+					local xpta = game.Players.LocalPlayer and game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character.HumanoidRootPart
+                    if xpta then
+                        game.Players.LocalPlayer.Character.Humanoid:ChangeState(15)
+                        game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(RealTarget)
+                        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = RealTarget
+                        task.wait()
+                        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = RealTarget
+                        task.wait()
+                        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = RealTarget
+                        task.wait()
+                        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = RealTarget
+                        wait(7)
+                    end
+				end
+			elseif game.Players.LocalPlayer.Character.Humanoid.Health > 0 then
+				TP(RealTarget)
+			end
+		end)
+	end
+    
 
 function Buso()
     if (not (game.Players.LocalPlayer.Character:FindFirstChild("HasBuso"))) then
