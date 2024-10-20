@@ -3335,7 +3335,7 @@ end
                    to(game:GetService("Workspace").Map["Haunted Castle"].Summoner.Detection.CFrame)
                    elseif   CheckSea(3) and CheckBoss"Soul Reaper"  then
                       local ter = CheckBoss"Soul Reaper"
-                      set("Attempt To Farming "..ter.Name.." [Hallow Scythe]")
+                     
                       repeat wait()
                          pcall(function ()
                          to(ter.HumanoidRootPart.CFrame*CFrame.new(3,40,7))
@@ -3359,7 +3359,7 @@ end
 
                    elseif   CheckSea(3) and buddyreq  then
                       local ter = CheckBoss"Cake Queen"
-                      set("Attempt To Farming "..ter.Name.." [Buddy Sword]")
+                     
                       repeat wait()
                          pcall(function ()
                          to(getKillVector3(ter.HumanoidRootPart.CFrame))
@@ -3375,7 +3375,7 @@ end
                       until checkitem"Yama"
  
                    elseif  CheckSea(3) and tushitareq  then
-                      set"Doing Holy Torch Quest"
+                      
                       if not EquipWeaponName"Holy Torch"  then
                          to(CFrame.new(-10752, 417, -9366))
                       else
@@ -3397,7 +3397,7 @@ end
                       game.Players.LocalPlayer.Character.Humanoid.Health = -2
                    else  
                       local ngbthemcac = getSpeficalBoss()
-                      set("Farming Boss: "..ngbthemcac.Name)
+                      
                       if ngbthemcac  then
                          repeat wait ()
                             pcall(function ()
@@ -3438,7 +3438,7 @@ end
                   until checkNotify"job" or os.time()-check180 > 200
                    
                   elseif   CheckSea(3) and hakicol  then
-                     set"Doing Rainbow Haki Quest"
+                    
                      if game.Players.LocalPlayer.PlayerGui.Main.Quest.Visible  then
                        if string.find(game.Players.LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text, "Stone")  then
                         if not CheckBoss"Stone"  then
@@ -3519,7 +3519,7 @@ end
                 
                   elseif CheckSea(3) and cls_5 then
                      eltrulngungungu = getElite()
-                     set("Farming Elite: "..eltrulngungungu.Name)
+                     
                      if eltrulngungungu  then
                         if game.Players.LocalPlayer.PlayerGui.Main.Quest.Visible  then
 
@@ -3588,7 +3588,7 @@ end
                         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
                      end
                   elseif  BartiloProgress == 1  then
-                     set"Doing Bartilo Quest 2: Killing Jeremy [Boss]"
+                     
                      local v84 = CheckBoss("Jeremy")
 
 
@@ -3646,7 +3646,7 @@ end
                   
               elseif   CheckSea(3) and CheckMaterialCount("Conjured Cocoa") < 10 and not checkitem"Sweet Chalice" and not checkitem"Mirror Fractal"  then
                   local vinhbeo = {"Chocolate Bar Battler","Cocoa Warrior"}
-                  set("Farmimg Until Conjured Cocoa Hit 10x ["..CheckMaterialCount("Conjured Cocoa").."/10]")
+        
                   for vdjsbxhw, fjwjsnnd in pairs(vinhbeo) do
                      if not getmon(fjwjsnnd)  then
                         pcall(function () to(getMobLoadPos(fjwjsnnd:gsub(" %pLv. %d+%p", ""))*CFrame.new(0,80,0)) end)
@@ -3778,7 +3778,7 @@ elseif CheckSea(3) and c().Main['Soul Guitar'] and type(game:GetService("Replica
                elseif  CheckSea(2) and rengokustat3  then
                
                   local ayumimimimi = CheckBoss"Awakened Ice Admiral"
-                  set"Attempt To Farming Awakened Ice Admiral [Lv. 1400] [Rengoku/Phoeyu]"
+                  
                   repeat wait()
                 print (0)
                 to(getKillVector3(ayumimimimi.HumanoidRootPart.CFrame))
