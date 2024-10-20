@@ -84,7 +84,9 @@ function check_frozen()
         return false
     end
 end
-
+	Main= false
+	 Dressrosa = false
+	 Zou = false
 if game.PlaceId == 2753915549 then
      Main = true
 elseif game.PlaceId == 4442272183 then
@@ -94,6 +96,15 @@ elseif game.PlaceId == 7449423635 then
 else
     game.Players.LocalPlayer:Kick("[Ganteng Hub] Only Support BF")
 end 
+spawn(function()
+		while wait(150) do
+			if Auto_Farm_Kaitun then
+				game:service('VirtualInputManager'):SendKeyEvent(true, "Space", false, game)
+				wait(0.5)
+				game:service('VirtualInputManager'):SendKeyEvent(false, "Space", false, game)
+			end
+		end
+	 end)
 
 function CheckQuest()
 		local Lv = game:GetService("Players").LocalPlayer.Data.Level.Value
@@ -1123,6 +1134,10 @@ if game.Players.LocalPlayer.PlayerGui.Main.Quest.Visible == false then
 					game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text = NameMon
 					game.Players.LocalPlayer.PlayerGui.Main.Quest.Visible = true
 				else
+		game.Players.LocalPlayer.PlayerGui.Main.Quest.Visible == true then
+			game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AbandonQuest")
+		end
+	end
 					CheckQuest()
 					if not First_Quest then
 						if SelectMonster ~= nil then
@@ -1139,7 +1154,7 @@ if game.Players.LocalPlayer.PlayerGui.Main.Quest.Visible == false then
 							game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("StartQuest", NameQuest, QuestLv)
 							game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("SetSpawnPoint")
 						end
-					until game.Players.LocalPlayer.PlayerGui.Main.Quest.Visible == true 
+					until game.Players.LocalPlayer.PlayerGui.Main.Quest.Visible == true and not Auto_Farm_Kaitun
 				end
 			end
 function TPX(RealTarget)
@@ -1259,7 +1274,7 @@ spawn(function()
         if getgenv().Kaitun == true then
             CheckQuest()
             for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
-                if getgenv().Kaitun and StartMagnet and v.Name == Mon and (Mon == "Factory Staff" or Mon == "Monkey" or Mon == "Dragon Crew Warrior" or Mon == "Dragon Crew Archer") and v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 and (v.HumanoidRootPart.Position - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 220 then
+                if getgenv().Kaitun and StartMagnet and v.Name == Mon and (Mon == "Sky Bandit" or Mon == "Shanda" or Mon == "Dragon Crew Warrior" or Mon == "Dragon Crew Archer") and v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 and (v.HumanoidRootPart.Position - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 220 then
                     v.HumanoidRootPart.Size = Vector3.new(50,50,50)
                     v.HumanoidRootPart.CFrame = PosMon
                     v.Humanoid:ChangeState(14)
@@ -1319,15 +1334,6 @@ spawn(function()
             pcall(function()
                 if game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false then
                     StartMagnet = false
-                    if _G.BypassTP then
-                        if (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - CFrameQuest.Position).Magnitude > 1500 then
-                            Bypass(CFrameQuest)
-                        elseif (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - CFrameQuest.Position).Magnitude < 1500 then
-                            topos(CFrameQuest)
-                    end
-                else
-                    topos(CFrameQuest)
-                end
                 if (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - CFrameQuest.Position).Magnitude <= 20 then
                     game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("StartQuest",NameQuest,LevelQuest)
                 end
@@ -1422,7 +1428,6 @@ spawn(function()
                                 v.HumanoidRootPart.CanCollide = false
                                 v.Humanoid.WalkSpeed = 0
                                 v.Head.CanCollide = false
-                                v.HumanoidRootPart.Size = Vector3.new(70,70,70)
                                 game:GetService'VirtualUser':CaptureController()
                                 game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
                                 StartKaitun = true
