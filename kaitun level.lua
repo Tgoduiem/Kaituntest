@@ -1119,7 +1119,7 @@ function CheckQuest()
 if game.Players.LocalPlayer.PlayerGui.Main.Quest.Visible == false then
 				local Lv = game.Players.LocalPlayer.Data.Level.Value
 				if game.Players.LocalPlayer.Data.Level.Value >= 10 and game.Players.LocalPlayer.Data.Level.Value <= 100 then
-					CheckLevel2()
+					CheckQuest()
 					game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text = NameMon
 					game.Players.LocalPlayer.PlayerGui.Main.Quest.Visible = true
 				else
@@ -1139,7 +1139,7 @@ if game.Players.LocalPlayer.PlayerGui.Main.Quest.Visible == false then
 							game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("StartQuest", NameQuest, QuestLv)
 							game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("SetSpawnPoint")
 						end
-					until game.Players.LocalPlayer.PlayerGui.Main.Quest.Visible == true or not Auto_Farm_Kaitun
+					until game.Players.LocalPlayer.PlayerGui.Main.Quest.Visible == true or not A
 				end
 			end
 function TPX(RealTarget)
@@ -1179,10 +1179,6 @@ function TPX(RealTarget)
 				elseif Main and (Vector3.new(3876.00366, 24.6882591, -3820.21777)-RealTarget.Position).Magnitude <= 1700 then
 					TP(RealTarget)
 				elseif Dressrosa and (Vector3.new(3876.00366, 24.6882591, -3820.21777)-RealTarget.Position).Magnitude <= 3000 then
-					TP(RealTarget)
-				elseif Dressrosa and List.Boss and Select_List_Boss == "Darkbeard" and Start_Kill_Boss then
-					TP(RealTarget)
-				elseif Zou and List.Boss and Select_List_Boss == "Cake Prince" and Start_Kill_Boss then
 					TP(RealTarget)
 				elseif Dressrosa and (Vector3.new(4768.3388671875, 8.318676948547363, 2868.102294921875)-RealTarget.Position).Magnitude <= 1700 then
 					TP(RealTarget)
