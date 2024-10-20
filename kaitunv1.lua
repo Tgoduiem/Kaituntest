@@ -3778,10 +3778,9 @@ elseif CheckSea(3) and c().Main['Soul Guitar'] and type(game:GetService("Replica
                elseif  CheckSea(2) and rengokustat3  then
                
                   local ayumimimimi = CheckBoss"Awakened Ice Admiral"
-                  
                   repeat wait()
                 print (0)
-                to(getKillVector3(ayumimimimi.HumanoidRootPart.CFrame))
+                to(getKillVector3(ayumimimimi))
                 print (1)
                      click = true
                      stuff(ayumimimimi)
@@ -3792,7 +3791,7 @@ elseif CheckSea(3) and c().Main['Soul Guitar'] and type(game:GetService("Replica
                 
                   repeat wait()
                   warn(0)
-                     to(getKillVector3(ayumimimimi.HumanoidRootPart.CFrame))
+                     to(getKillVector3(ayumimimimi.))
                      click = true
                      stuff(ayumimimimi)
                  
