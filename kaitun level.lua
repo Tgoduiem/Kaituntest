@@ -1123,7 +1123,7 @@ if game.Players.LocalPlayer.PlayerGui.Main.Quest.Visible == false then
 					game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text = NameMon
 					game.Players.LocalPlayer.PlayerGui.Main.Quest.Visible = true
 				else
-					CheckLevel2()
+					CheckQuest()
 					if not First_Quest then
 						if SelectMonster ~= nil then
 							First_Quest = true
