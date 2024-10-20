@@ -2341,9 +2341,9 @@ function TPX(RealTarget)
 				elseif Main and (Vector3.new(-7894.6176757813, 5547.1416015625, -380.29119873047)-RealTarget.Position).Magnitude <= 2000 then
 					game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(-7894.6176757813, 5547.1416015625, -380.29119873047))
 				elseif Main and (Vector3.new(-2953.31884765625, 41.01357650756836, 2099.16943359375)-RealTarget.Position).Magnitude <= 2300 then
-					if Old_World and (Vector3.new(61163.8515625, 11.6796875, 1819.7841796875)-game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 2000 then
+					if Main and (Vector3.new(61163.8515625, 11.6796875, 1819.7841796875)-game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 2000 then
 						game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(-4607.82275, 872.54248, -1667.55688))
-					elseif Old_World and (Vector3.new(-7894.6176757813, 5547.1416015625, -380.29119873047)-game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 2000 then
+					elseif Main and (Vector3.new(-7894.6176757813, 5547.1416015625, -380.29119873047)-game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 2000 then
 						game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(-4607.82275, 872.54248, -1667.55688))
 					end
 					TP(RealTarget)
@@ -2403,38 +2403,6 @@ end
 function whatismyrace() 
   return game:GetService("Players").LocalPlayer.Data.Race.Value 
 end 
-
-         function MobLevel1OrMobLevel2()
-            local aa = {}
-            for r, v in pairs(getsortedmon()) do
-               if
-               not table.find(aa, v.Name) and v:IsA("Model") and v.Name ~= "PirateBasic" and
-               not string.find(v.Name, "Brigade") and
-               v:FindFirstChild("Humanoid") and
-               v.Humanoid.Health > 0 and
-               v:FindFirstChild("HumanoidRootPart")
-               then
-                  table.insert(aa, v.Name)
-               end
-            end
-            for r, v in pairs(aa) do
-               local ab = v
-               
-               v = tostring(v:gsub(" %pLv. %d+%p", ""))
-               if tostring(v) == CheckNameDoubleQuest() then
-                  returstring(ab)
-               end
-            end
-            return false
-         end
-         local ad = game.ReplicatedStorage.Remotes["CommF_"]
-         raidlist = {}
-           for i, v in pairs(require(game:GetService("ReplicatedStorage").Raids).advancedRaids) do 
-             table.insert(raidlist, v) 
-           end 
-           for i, v in pairs(require(game:GetService("ReplicatedStorage").Raids).raids) do 
-             table.insert(raidlist, v) 
-           end
            
 function getraidchip() 
   local df = game.Players.LocalPlayer.Data.DevilFruit.Value 
@@ -2447,28 +2415,7 @@ function getraidchip()
   
   return "Dark"
 end
-         function GetQuest()
-            if game.Players.LocalPlayer.PlayerGui.Main:FindFirstChild("Quest").Visible then
-               return
-            end
-            if not QuestPoint[tostring(CheckDoubleQuest2().NameQuest)] then
-               CFrameQuest()
-               return
-            end
-            if
-            (QuestPoint[CheckDoubleQuest2().NameQuest].Position -
-            game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 8
-            then 
-              vc = CheckDoubleQuest2()
-               ad:InvokeServer("StartQuest", tostring(vc.NameQuest), vc.ID)
-               MobDual2 = vc.Name  
-            
 
-            else
-               QuestCFrame = QuestPoint[CheckDoubleQuest2().NameQuest]
-               to(QuestCFrame) 
-               
-            end
             
          
          end
@@ -3488,34 +3435,6 @@ wait(2)
     game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
     wait(2)
 end
-            function BTP(Position)
-               
-               game.Players.LocalPlayer.Character.Head:Destroy()
-               game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Position
-               wait(1)
-               game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Position
-               game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("SetSpawnPoint")
-            end
-
-
-            function bypass(pos)
-               local a, b = nil, math.huge
-               for i,v in pairs(game.Workspace._WorldOrigin.PlayerSpawns:FindFirstChild(tostring(game.Players.LocalPlayer.Team)):GetChildren()) do
-                  if game.Players.LocalPlayer:DistanceFromCharacter(v:GetModelCFrame().Position) < b then
-                     a = v:GetModelCFrame()
-                     b = game.Players.LocalPlayer:DistanceFromCharacter(v:GetModelCFrame().Position)
-                  end
-               end
-
-               if (pos.Position-CFrame.new(61191.12109375, 18.497436523438, 1561.8873291016).Position).Magnitude < 5000 then
-                  requestEntrance(CFrame.new(61191.12109375, 18.497436523438, 1561.8873291016).Position)
-               end
-               if a then
-                  if game.Players.LocalPlayer:DistanceFromCharacter(a.Position) < game.Players.LocalPlayer:DistanceFromCharacter(pos.Position) and game.Players.LocalPlayer:DistanceFromCharacter(a.Position) > 200 then
-                     BTP(a)
-                  end
-               end
-            end
 
 
             function CheckSea(e) 
