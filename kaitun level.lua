@@ -1139,7 +1139,7 @@ if game.Players.LocalPlayer.PlayerGui.Main.Quest.Visible == false then
 							game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("StartQuest", NameQuest, QuestLv)
 							game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("SetSpawnPoint")
 						end
-					until game.Players.LocalPlayer.PlayerGui.Main.Quest.Visible == true or not A
+					until game.Players.LocalPlayer.PlayerGui.Main.Quest.Visible == true 
 				end
 			end
 function TPX(RealTarget)
