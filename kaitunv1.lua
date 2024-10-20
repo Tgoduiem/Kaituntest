@@ -4134,7 +4134,7 @@ repeat wait ()
                      
                               game.Players.LocalPlayer.Character.Humanoid:MoveTo(fw.Handle.CFrame.p)
                               to(fw.Handle.CFrame)
-                        elseif   CheckSea(2) and getPlayerLevel() > 1500 and uable["FlamingoAccess"] == nil and get1mfruit() == false and not AutoRaid and not CheckIsRaiding() and c().Main["Misc / Hop To Another For 1m+ Fruit (Swan Quest)"] and (os.time()- timelol) > c().Main["Misc / Delay For Hopping"]  then
+                        elseif   CheckSea(2) and getPlayerLevel() > 1500 == nil and get1mfruit() == false and not AutoRaid and not CheckIsRaiding() and c().Main["Misc / Hop To Another For 1m+ Fruit (Swan Quest)"] and (os.time()- timelol) > c().Main["Misc / Delay For Hopping"]  then
 
                            set("Hopping For Reason: Missing 1M+ Fruit, Hop")
                            wait(2)
@@ -4142,7 +4142,7 @@ repeat wait ()
                               HopServer() wait(9999)
                            end
                            HopServer() wait(9999)
-                        elseif CheckSea(2) and getPlayerLevel() > 1100 and  not uable["FlamingoAccess"]  and get1mfruit() then
+                        elseif CheckSea(2) and getPlayerLevel() > 1100  and get1mfruit() then
                    
                         
                            set"Give 1M+ Devil Fruit For Trevor [Swan Quests]"
