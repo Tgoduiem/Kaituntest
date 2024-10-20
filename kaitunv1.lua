@@ -3784,18 +3784,18 @@ elseif CheckSea(3) and c().Main['Soul Guitar'] and type(game:GetService("Replica
                 print (1)
                      click = true
                      stuff(ayumimimimi)
-                    
-                  until not skidymf(ayumimimimi)
+                     
+                  until not skidymf(ayumimimimi.HumanoidRootPart.CFrame)
                elseif  CheckSea(2)  and waterkeystuff   then
                   local ayumimimimi = CheckBoss"Tide Keeper"
                 
                   repeat wait()
                   warn(0)
-                     to(getKillVector3(ayumimimimi.))
+                     to(getKillVector3(ayumimimimi.HumanoidRootPart.CFrame))
                      click = true
                      stuff(ayumimimimi)
                  
-                  until not skidymf(ayumimimimi)
+                  until not skidymf(ayumimimimi.HumanoidRootPart.CFrame)
                   if not checkitem"Water Key" and getPlayerLevel() > 1500  then
                     noti"Hop For Water Key"
                      HopServer() wait(9999)
