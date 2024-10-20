@@ -1457,15 +1457,6 @@ end
                end
             end
          end
-        local radius = 5
-local speed = 50
-local angle = 0
-y = 45
-function getKillVector3(pos)
-   
-    angle = angle + speed
-    return pos + Vector3.new(math.sin(math.rad(angle)) * radius, y, math.cos(math.rad(angle)) * radius)
-end
 
          function autopoint()
             if getPlayerLevel() > 500 and CheckSea(1) then
@@ -4152,7 +4143,7 @@ repeat wait ()
                            game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("TalkTrevor","2")
                            game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("TalkTrevor","3")
 
-                        elseif   CheckSea(2) and getPlayerLevel() > 1100 and uable["FlamingoAccess"] and CheckBoss"Don Swan" and zqp  == nil  then
+                        elseif   CheckSea(2) and getPlayerLevel() > 1100  and CheckBoss"Don Swan" and zqp  == nil  then
                       
                            local v54 = CheckBoss"Don Swan"
                            if v54  then
