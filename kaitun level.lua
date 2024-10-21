@@ -96,15 +96,6 @@ elseif game.PlaceId == 7449423635 then
 else
     game.Players.LocalPlayer:Kick("[Ganteng Hub] Only Support BF")
 end 
-spawn(function()
-		while wait(150) do
-			if Auto_Farm_Kaitun then
-				game:service('VirtualInputManager'):SendKeyEvent(true, "Space", false, game)
-				wait(0.5)
-				game:service('VirtualInputManager'):SendKeyEvent(false, "Space", false, game)
-			end
-		end
-	 end)
 
 function CheckQuest()
 		local Lv = game:GetService("Players").LocalPlayer.Data.Level.Value
@@ -1154,7 +1145,7 @@ if game.Players.LocalPlayer.PlayerGui.Main.Quest.Visible == false then
 							game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("StartQuest", NameQuest, QuestLv)
 							game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("SetSpawnPoint")
 						end
-					until game.Players.LocalPlayer.PlayerGui.Main.Quest.Visible == true and not Auto_Farm_Kaitun
+					until game.Players.LocalPlayer.PlayerGui.Main.Quest.Visible == true 
 				end
 			end
 function TPX(RealTarget)
