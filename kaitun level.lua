@@ -1116,6 +1116,29 @@ function CheckQuest()
 			end
 		end
 	end
+		end
+	end
+
+		local function Check_Table(vp,xp)
+			for i,v in pairs(vp) do
+				if v == xp then
+					return true
+				end
+			end
+		end
+	CheckMonSpawn = {}
+	function Click()
+		local Module = require(game.Players.LocalPlayer.PlayerScripts.CombatFramework)
+		local CombatFramework = debug.getupvalues(Module)[2]
+		local CamShake = require(game.ReplicatedStorage.Util.CameraShaker)
+		CamShake:Stop()
+		CombatFramework.activeController.attacking = false
+		CombatFramework.activeController.timeToNextAttack = 0
+		CombatFramework.activeController.hitboxMagnitude = 60
+		game:GetService'VirtualUser':CaptureController()
+		game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
+	end
+
 if game.Players.LocalPlayer.PlayerGui.Main.Quest.Visible == false then
 				local Lv = game.Players.LocalPlayer.Data.Level.Value
 				if game.Players.LocalPlayer.Data.Level.Value >= 10 and game.Players.LocalPlayer.Data.Level.Value <= 100 then
@@ -1204,6 +1227,23 @@ function TPX(RealTarget)
 			end
 		end)
 	end
+if game.Players.LocalPlayer.PlayerGui.Main.Quest.Visible == true and not string.find(game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text, NameMon) then
+				game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AbandonQuest")
+			end
+			CMS = false
+			if Check_Table(CheckMonSpawn,Ms) == true then
+				CMS = true
+			end
+			if CMS == false then
+				TPX(CFrameMon)
+				if (CFrameMon.Position-game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 10 then
+					for i = 500,0,-100 do
+						CheckCF(i)
+					end
+					TPX(CFrameMon*CFrame.new(0,15,0))
+					SpawnMon()
+					table.insert(CheckMonSpawn,Ms)
+				end
     
 
 function Buso()
