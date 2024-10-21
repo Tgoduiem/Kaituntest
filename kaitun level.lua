@@ -94,6 +94,14 @@ elseif game.PlaceId == 7449423635 then
 else
     game.Players.LocalPlayer:Kick("[Ganteng Hub] Only Support BF")
 end 
+function CheckCF(vu)
+		for i,v in pairs(game:GetService("Workspace")["_WorldOrigin"].EnemyRegions:GetChildren()) do
+			if (v.Position-CFrameMon.Position).Magnitude <= vu then
+				CFrameMon = v.CFrame
+				return
+			end
+		end
+	end
 
 function CheckQuest()
 		local Lv = game:GetService("Players").LocalPlayer.Data.Level.Value
@@ -1127,18 +1135,6 @@ function CheckQuest()
 			end
 		end
 	CheckMonSpawn = {}
-	function Click()
-		local Module = require(game.Players.LocalPlayer.PlayerScripts.CombatFramework)
-		local CombatFramework = debug.getupvalues(Module)[2]
-		local CamShake = require(game.ReplicatedStorage.Util.CameraShaker)
-		CamShake:Stop()
-		CombatFramework.activeController.attacking = false
-		CombatFramework.activeController.timeToNextAttack = 0
-		CombatFramework.activeController.hitboxMagnitude = 60
-		game:GetService'VirtualUser':CaptureController()
-		game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
-	end
-
 if game.Players.LocalPlayer.PlayerGui.Main.Quest.Visible == false then
 				local Lv = game.Players.LocalPlayer.Data.Level.Value
 				if game.Players.LocalPlayer.Data.Level.Value >= 10 and game.Players.LocalPlayer.Data.Level.Value <= 100 then
