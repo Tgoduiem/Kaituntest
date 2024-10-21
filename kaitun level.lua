@@ -1204,7 +1204,132 @@ function TPX(RealTarget)
 			end
 		end)
 	end
-    
+    if game.Players.LocalPlayer.PlayerGui.Main.Quest.Visible == true and Ms ~= nil then
+			if game.Players.LocalPlayer.Data.Level.Value <= 100 then
+				if game.Players.LocalPlayer.Data.Level.Value >= Next_Level_X then
+					SelectMonster = nil
+					game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AbandonQuest")
+				end
+			end
+			if game.Players.LocalPlayer.PlayerGui.Main.Quest.Visible == true and not string.find(game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text, NameMon) then
+				game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AbandonQuest")
+			end
+			CMS = false
+			if Check_Table(CheckMonSpawn,Ms) == true then
+				CMS = true
+			end
+			if CMS == false then
+				TPX(CFrameMon)
+				if (CFrameMon.Position-game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 10 then
+					for i = 500,0,-100 do
+						CheckCF(i)
+					end
+					TPX(CFrameMon*CFrame.new(0,15,0))
+					SpawnMon()
+					table.insert(CheckMonSpawn,Ms)
+				end
+			else
+				if not game.Workspace.Enemies:FindFirstChild(Ms) and not game.ReplicatedStorage:FindFirstChild(Ms) then
+					if game:GetService("Workspace")["_WorldOrigin"].EnemySpawns:FindFirstChild(NameMon) then
+						for i,v in next,game:GetService("Workspace")["_WorldOrigin"].EnemySpawns:GetChildren() do
+							if v.Name == NameMon and not game.Workspace.Enemies:FindFirstChild(Ms) and not game.ReplicatedStorage:FindFirstChild(Ms) then
+								repeat wait(.1)
+									TPX(v.CFrame*CFrame.new(0,15,0))
+								until Start_Farm_Mastery_Gun or (v.Position-game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 16 or game.Workspace.Enemies:FindFirstChild(Ms) or game.ReplicatedStorage:FindFirstChild(Ms)
+							end
+						end
+					else
+						TPX(CFrameMon*CFrame.new(0,10,0))
+					end
+				end
+				if game.Workspace.Enemies:FindFirstChild(Ms) then
+					for i,v in pairs(game.Workspace.Enemies:GetChildren()) do
+						if v.Name == Ms and v.Humanoid.Health > 0 then
+							if v.Humanoid:FindFirstChild("Animator") then
+								v.Humanoid.Animator:Destroy()
+							end
+							PosMon_X = v.HumanoidRootPart.CFrame
+							StatrMagnet = true
+							repeat wait()
+								if (v.HumanoidRootPart.Position-game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 23 then
+									TPX(v.HumanoidRootPart.CFrame * CFrame.new(0, 20, 0))
+								end
+								EquipWeapon(Weapon)
+							until not v.Parent or v.Humanoid.Health <= 0 or game.Players.LocalPlayer.PlayerGui.Main.Quest.Visible == false or not Auto_Farm_Kaitun or Start_Farm_Mastery_Gun or Start_Farm_Mastery_Fruit 
+							TPX(v.HumanoidRootPart.CFrame * CFrame.new(0, 30, 0))
+							StatrMagnet = false
+						end
+					end
+				elseif game.ReplicatedStorage:FindFirstChild(Ms) then
+					TPX(game.ReplicatedStorage:FindFirstChild(Ms).HumanoidRootPart.CFrame*CFrame.new(0,20,0))
+				end
+			end
+
+
+	function TPBoat(p,boat,speedx,stop)
+		if stop == nil then
+			stop = false
+		end
+		local Distance = (p.Position - boat.Position).Magnitude
+		Speed = speedx
+		TweenP = game:GetService("TweenService"):Create(boat,TweenInfo.new(Distance/Speed, Enum.EasingStyle.Linear),{CFrame = p})
+		if stop == true then
+			TweenP:Cancel()
+		else
+			TweenP:Play()
+		end
+	end
+	function TPZ(p)
+		local Distance = (p.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
+		if Distance < 100 then
+			Speed = 50
+		elseif Distance < 400 then
+			Speed = 400
+		elseif Distance < 1000 then
+			Speed = 300
+		elseif Distance < 1500 then
+			Speed = 260
+		elseif Distance >= 1500 then
+			Speed = 300
+		end
+		Tween = game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart,TweenInfo.new(Distance/Speed, Enum.EasingStyle.Linear),{CFrame = p})
+		Tween:Play()
+	end
+	function TPZX(p)
+		local Distance = (p.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
+		if Distance < 100 then
+			Speed = 20
+		elseif Distance < 400 then
+			Speed = 400
+		elseif Distance < 1000 then
+			Speed = 300
+		elseif Distance < 1500 then
+			Speed = 260
+		elseif Distance >= 1500 then
+			Speed = 300
+		end
+		Tween = game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart,TweenInfo.new(Distance/Speed, Enum.EasingStyle.Linear),{CFrame = p})
+		Tween:Play()
+	end
+	function CheckCF(vu)
+		for i,v in pairs(game:GetService("Workspace")["_WorldOrigin"].EnemyRegions:GetChildren()) do
+			if (v.Position-CFrameMon.Position).Magnitude <= vu then
+				CFrameMon = v.CFrame
+				return
+			end
+		end
+	end
+	function SpawnMon()
+		for i2,v2 in pairs(game:GetService("Workspace")["_WorldOrigin"].EnemyRegions:GetChildren()) do
+			if (v2.Position-game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 500 then
+				game:GetService("ReplicatedStorage").Remotes.Location:FireServer(v)
+				return
+			end
+		end
+	end
+
+
+	
 
 function Buso()
     if (not (game.Players.LocalPlayer.Character:FindFirstChild("HasBuso"))) then
