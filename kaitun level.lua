@@ -94,14 +94,6 @@ elseif game.PlaceId == 7449423635 then
 else
     game.Players.LocalPlayer:Kick("[Ganteng Hub] Only Support BF")
 end 
-function CheckCF(vu)
-		for i,v in pairs(game:GetService("Workspace")["_WorldOrigin"].EnemyRegions:GetChildren()) do
-			if (v.Position-CFrameMon.Position).Magnitude <= vu then
-				CFrameMon = v.CFrame
-				return
-			end
-		end
-	end
 
 function CheckQuest()
 		local Lv = game:GetService("Players").LocalPlayer.Data.Level.Value
@@ -1124,17 +1116,6 @@ function CheckQuest()
 			end
 		end
 	end
-		end
-	end
-
-		local function Check_Table(vp,xp)
-			for i,v in pairs(vp) do
-				if v == xp then
-					return true
-				end
-			end
-		end
-	CheckMonSpawn = {}
 if game.Players.LocalPlayer.PlayerGui.Main.Quest.Visible == false then
 				local Lv = game.Players.LocalPlayer.Data.Level.Value
 				if game.Players.LocalPlayer.Data.Level.Value >= 10 and game.Players.LocalPlayer.Data.Level.Value <= 100 then
@@ -1223,23 +1204,6 @@ function TPX(RealTarget)
 			end
 		end)
 	end
-if game.Players.LocalPlayer.PlayerGui.Main.Quest.Visible == true and not string.find(game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text, NameMon) then
-				game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AbandonQuest")
-			end
-			CMS = false
-			if Check_Table(CheckMonSpawn,Ms) == true then
-				CMS = true
-			end
-			if CMS == false then
-				TPX(CFrameMon)
-				if (CFrameMon.Position-game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 10 then
-					for i = 500,0,-100 do
-						CheckCF(i)
-					end
-					TPX(CFrameMon*CFrame.new(0,15,0))
-					SpawnMon()
-					table.insert(CheckMonSpawn,Ms)
-				end
     
 
 function Buso()
