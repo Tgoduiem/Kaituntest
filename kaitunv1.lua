@@ -1261,6 +1261,16 @@ end
          end
 
 
+spawn(function()
+		while wait(150) do
+			if Auto_Farm_Kaitun then
+				game:service('VirtualInputManager'):SendKeyEvent(true, "Space", false, game)
+				wait(0.5)
+				game:service('VirtualInputManager'):SendKeyEvent(false, "Space", false, game)
+			end
+		end
+	 end)
+
 
 
          function CheckLevel2()
@@ -2308,7 +2318,7 @@ if game.Players.LocalPlayer.PlayerGui.Main.Quest.Visible == false then
 							game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("StartQuest", NameQuest, QuestLv)
 							game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("SetSpawnPoint")
 						end
-					until game.Players.LocalPlayer.PlayerGui.Main.Quest.Visible == true
+					until game.Players.LocalPlayer.PlayerGui.Main.Quest.Visible == true or not Auto_Farm_Kaitun
 				end
 			end
 
