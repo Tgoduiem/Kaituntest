@@ -2576,48 +2576,6 @@ end)
          end
 
 
-         function checkq()
-            local T = game.Players.LocalPlayer.Data.Level.Value
-            local min = 0
-            if T >= 1450 and game.PlaceId == 4442272183 then
-               Mob1 = "Water Fighter"
-               Mob2 = "ForgottenQuest"
-               Mob3 = 2
-            elseif  T >= 700 and game.PlaceId == 2753915549 then
-               Mob1 = "Galley Captain"
-               Mob2 = "FountainQuest"
-               Mob3 = 2
-            elseif  T >= 1350 and not checkitem("Rengoku") and c().Main["Staying On 2ne Sea Until Got Rengoku"] then
-               set1("Forcing Monster On Ice Castle For Rengoku")
-               local shitbozo = math.random(1,2)
-               Mob2 = "FrostQuest"
-               if shitbozo == 1 then
-                  Mob1 = "Snow Lurker"
-                  Mob3 = 2
-               else
-                  Mob1 = "Arctic Warrior"
-                  Mob3 = 1
-               end
-            elseif T >= 2050 and checkm2("DragonTalon") ~= 1 and not checkMelee("DragonTalon") and eltrul["Electric Claw"] > 399 then
-                  Mob1 = "Posessed Mummy"
-                  Mob2 = "HauntedQuest2"
-                  Mob3 = 2
-               else
-                  for r, v in pairs(Q) do
-                     for M, N in pairs(v) do
-                        local U = N.LevelReq
-                        for O, P in pairs(N.Task) do
-                           if T >= U and U >= min and N.Task[O] > 1 and not table.find(R, tostring(r)) then
-                              min = U
-                              Mob1 = tostring(O)
-                              Mob2 = r
-                              Mob3 = M
-                           end
-                        end
-                     end
-                  end
-               end
-            end
             function spamandwait(wt) 
               taocanpasue = true 
               for i, v in pairs(wt) do 
@@ -3437,49 +3395,8 @@ wait(2)
 end
 
 
-            function CheckSea(e) 
-              if sussea then 
-              if sussea == e then return true end
-              else
-               if game.PlaceId == 2753915549 then
-                  if e == 1 then 
-                    sussea = 1
-                     return true
-                  end
-               elseif  game.PlaceId == 4442272183 then
-                  if e == 2 then
-                    sussea = 2
-                     return true
-                  end
-               elseif  game.PlaceId == 7449423635 then
-                  if e == 3 then
-                    sussea = 3
-                     return true
-                  end
-               end
-               return false
-            end
-end 
+           
 
-            function TeleportSea(e)
-               if e == 1 then
-                  if not CheckSea(e) then
-                     local args = {[1] = "TravelMain"}
-                     game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
-                     wait()
-                  end
-               elseif  e == 2 then
-                  if not CheckSea(e) then
-                     local args = {[1] = "TravelDressrosa"}
-                     game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
-                  end
-               elseif  e == 3 then
-                  if not CheckSea(e) then
-                     local args = {[1] = "TravelZou"}
-                     game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
-                  end
-               end
-            end
 getgenv().a = false
 
 
