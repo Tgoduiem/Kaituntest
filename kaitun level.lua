@@ -84,9 +84,7 @@ function check_frozen()
         return false
     end
 end
-	Main= false
-	 Dressrosa = false
-	 Zou = false
+
 if game.PlaceId == 2753915549 then
      Main = true
 elseif game.PlaceId == 4442272183 then
@@ -1125,10 +1123,6 @@ if game.Players.LocalPlayer.PlayerGui.Main.Quest.Visible == false then
 					game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text = NameMon
 					game.Players.LocalPlayer.PlayerGui.Main.Quest.Visible = true
 				else
-		game.Players.LocalPlayer.PlayerGui.Main.Quest.Visible == true then
-			game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AbandonQuest")
-		end
-	end
 					CheckQuest()
 					if not First_Quest then
 						if SelectMonster ~= nil then
@@ -1145,7 +1139,7 @@ if game.Players.LocalPlayer.PlayerGui.Main.Quest.Visible == false then
 							game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("StartQuest", NameQuest, QuestLv)
 							game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("SetSpawnPoint")
 						end
-					until game.Players.LocalPlayer.PlayerGui.Main.Quest.Visible == true 
+					until game.Players.LocalPlayer.PlayerGui.Main.Quest.Visible == true or not A
 				end
 			end
 function TPX(RealTarget)
@@ -1325,6 +1319,15 @@ spawn(function()
             pcall(function()
                 if game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false then
                     StartMagnet = false
+                    if _G.BypassTP then
+                        if (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - CFrameQuest.Position).Magnitude > 1500 then
+                            Bypass(CFrameQuest)
+                        elseif (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - CFrameQuest.Position).Magnitude < 1500 then
+                            topos(CFrameQuest)
+                    end
+                else
+                    topos(CFrameQuest)
+                end
                 if (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - CFrameQuest.Position).Magnitude <= 20 then
                     game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("StartQuest",NameQuest,LevelQuest)
                 end
@@ -1419,6 +1422,7 @@ spawn(function()
                                 v.HumanoidRootPart.CanCollide = false
                                 v.Humanoid.WalkSpeed = 0
                                 v.Head.CanCollide = false
+                                v.HumanoidRootPart.Size = Vector3.new(70,70,70)
                                 game:GetService'VirtualUser':CaptureController()
                                 game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
                                 StartKaitun = true
@@ -1495,6 +1499,18 @@ function Hop()
             end
         end
     end
+    function Teleport() 
+        while wait() do
+            pcall(function()
+                TPReturner()
+                if foundAnything ~= "" then
+                    TPReturner()
+                end
+            end)
+        end
+    end
+    Teleport()
+end    
 --get saber
 AutoSaber = true
 spawn(function()
