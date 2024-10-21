@@ -14,8 +14,6 @@ repeat wait() until game: IsLoaded ()
    getgenv().Config = getgenv().Config or {
       ["Main"] =
       {
-         
-          
          ["Fast Method"] = true, -- Đ Làm Player Hunter
          ["Item / Saber"] = true, -- Tự Làm Puzzle Của Saber (Lấy Luôn)
          ["Quest / Bartilo"] = true, -- Tự Làm Nhiệm Vụ Bartilo
@@ -2320,75 +2318,7 @@ if game.Players.LocalPlayer.PlayerGui.Main.Quest.Visible == false then
 						end
 					until game.Players.LocalPlayer.PlayerGui.Main.Quest.Visible == true or not Auto_Farm_Kaitun
 				end
-			end
-
-
-function TPX(RealTarget)
-		pcall(function()
-			local Distance = (RealTarget.Position - game:GetService("Players").LocalPlayer.Character:WaitForChild("HumanoidRootPart").Position).Magnitude
-			if Distance < 100 then
-				Speed = 1500
-			elseif Distance < 200 then
-				Speed = 1200
-			elseif Distance < 500 then
-				Speed = 515
-			elseif Distance < 1000 then
-				Speed = 315
-			elseif Distance >= 1000 then
-				Speed = 300
-			end
-			if Distance > 3000 and game.Players.LocalPlayer.Character.Humanoid.Health > 0 then
-				if Main and (Vector3.new(61163.8515625, 11.6796875, 1819.7841796875)-RealTarget.Position).Magnitude <= 2000 then
-					game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(61163.8515625, 11.6796875, 1819.7841796875))
-				elseif Main and (Vector3.new(-4607.82275, 872.54248, -1667.55688)-RealTarget.Position).Magnitude <= 2000 then
-					game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(-4607.82275, 872.54248, -1667.55688))
-				elseif Main and (Vector3.new(-7894.6176757813, 5547.1416015625, -380.29119873047)-RealTarget.Position).Magnitude <= 2000 then
-					game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(-7894.6176757813, 5547.1416015625, -380.29119873047))
-				elseif Dressrosa and (Vector3.new(923.21252441406, 126.9760055542, 32852.83203125)-RealTarget.Position).Magnitude <= 2000 then
-					game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(923.21252441406, 126.9760055542, 32852.83203125))
-				elseif Dressrosa and (Vector3.new(923.21252441406, 126.9760055542, 32852.83203125)-RealTarget.Position).Magnitude <= 2000 then
-					game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(923.21252441406, 126.9760055542, 32852.83203125))
-				elseif Main and (Vector3.new(-7894.6176757813, 5547.1416015625, -380.29119873047)-RealTarget.Position).Magnitude <= 2000 then
-					game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(-7894.6176757813, 5547.1416015625, -380.29119873047))
-				elseif Main and (Vector3.new(-2953.31884765625, 41.01357650756836, 2099.16943359375)-RealTarget.Position).Magnitude <= 2300 then
-					if Main and (Vector3.new(61163.8515625, 11.6796875, 1819.7841796875)-game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 2000 then
-						game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(-4607.82275, 872.54248, -1667.55688))
-					elseif Main and (Vector3.new(-7894.6176757813, 5547.1416015625, -380.29119873047)-game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 2000 then
-						game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(-4607.82275, 872.54248, -1667.55688))
-					end
-					TP(RealTarget)
-				elseif Main and (Vector3.new(3876.00366, 24.6882591, -3820.21777)-RealTarget.Position).Magnitude <= 1700 then
-					TP(RealTarget)
-				elseif Dressrosa and (Vector3.new(3876.00366, 24.6882591, -3820.21777)-RealTarget.Position).Magnitude <= 3000 then
-					TP(RealTarget)
-				elseif Dressrosa and List.Boss and Select_List_Boss == "Darkbeard" and Start_Kill_Boss then
-					TP(RealTarget)
-				elseif Zou and List.Boss and Select_List_Boss == "Cake Prince" and Start_Kill_Boss then
-					TP(RealTarget)
-				elseif Dressrosa and (Vector3.new(4768.3388671875, 8.318676948547363, 2868.102294921875)-RealTarget.Position).Magnitude <= 1700 then
-					TP(RealTarget)
-				elseif Dressrosa and (Vector3.new(-5219.4585, 58.2147713, 2384.21191)-RealTarget.Position).Magnitude <= 1200 then
-					TP(RealTarget)
-				elseif game.Players.LocalPlayer.Character.Humanoid.Health > 0 then 
-					local xpta = game.Players.LocalPlayer and game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character.HumanoidRootPart
-                    if xpta then
-                        game.Players.LocalPlayer.Character.Humanoid:ChangeState(15)
-                        game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(RealTarget)
-                        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = RealTarget
-                        task.wait()
-                        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = RealTarget
-                        task.wait()
-                        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = RealTarget
-                        task.wait()
-                        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = RealTarget
-                        wait(7)
-                    end
-				end
-			elseif game.Players.LocalPlayer.Character.Humanoid.Health > 0 then
-				TP(RealTarget)
-			end
-		end)
-	end
+	                  end
 
 
 
