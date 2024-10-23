@@ -2,6 +2,9 @@
 if _G.Switch_Hub_Series_R then
 	if not game:IsLoaded() then repeat game.Loaded:Wait() until game:IsLoaded() end
 
+
+if _G.Switch_Hub_Series_R then
+			Auto_Farm_Kaitun = true
 --- Join Team
 if game:GetService("Players").LocalPlayer.PlayerGui.Main:FindFirstChild("ChooseTeam") then
 		repeat task.wait()
