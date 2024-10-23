@@ -1,5 +1,16 @@
 if not game:IsLoaded() then repeat game.Loaded:Wait() until game:IsLoaded() end
 
+_G.On_Next_Generation = true
+if _G.On_Next_Generation then
+    _G.Switch_Hub_Series_R = true
+
+
+
+
+
+
+
+
 if _G.Switch_Hub_Series_R then
 	if not game:IsLoaded() then repeat game.Loaded:Wait() until game:IsLoaded() end
 
