@@ -2442,6 +2442,25 @@ fruitMap[#fruitMap+1]="Bird-Bird: Phonex"
             a5["ID"] = Mob3
             return a5
          end
+function getsortedmon()
+    local beo = game.Players.LocalPlayer
+    local memay = beo.Character:WaitForChild"HumanoidRootPart"
+    local chim = workspace.Enemies: GetChildren ()
+    local bamaysuccac = {} 
+    for i, v in pairs(chim) do 
+      if v.Name ~= "PirateBasic" and v.Name ~= "PirateBrigade" and v:FindFirstChild"HumanoidRootPart" then 
+        table.insert(bamaysuccac, v) 
+       end
+      end
+    table.sort(bamaysuccac, function(aL, aM)
+      
+        return beo: DistanceFromCharacter(aL.HumanoidRootPart.Position) < beo: DistanceFromCharacter (aM.HumanoidRootPart.Position) 
+    end)
+   
+   return bamaysuccac
+
+-- return bamaysuccac or game.Workspace.Enemies:GetChildren()
+end
          
 function moctui(r)
 
@@ -2756,7 +2775,6 @@ end)
             function Buso()
                if (not (game.Players.LocalPlayer.Character:FindFirstChild("HasBuso"))) then
                   local rel = game.ReplicatedStorage
-
                   rel.Remotes.CommF_:InvokeServer("Buso")
                end
             end
