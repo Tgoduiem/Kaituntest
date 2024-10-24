@@ -3503,25 +3503,7 @@ end
                game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("SetSpawnPoint")
             end
 
-
-            function bypass(pos)
-               local a, b = nil, math.huge
-               for i,v in pairs(game.Workspace._WorldOrigin.PlayerSpawns:FindFirstChild(tostring(game.Players.LocalPlayer.Team)):GetChildren()) do
-                  if game.Players.LocalPlayer:DistanceFromCharacter(v:GetModelCFrame().Position) < b then
-                     a = v:GetModelCFrame()
-                     b = game.Players.LocalPlayer:DistanceFromCharacter(v:GetModelCFrame().Position)
-                  end
-               end
-
-               if (pos.Position-CFrame.new(61191.12109375, 18.497436523438, 1561.8873291016).Position).Magnitude < 5000 then
-                  requestEntrance(CFrame.new(61191.12109375, 18.497436523438, 1561.8873291016).Position)
-               end
-               if a then
-                  if game.Players.LocalPlayer:DistanceFromCharacter(a.Position) < game.Players.LocalPlayer:DistanceFromCharacter(pos.Position) and game.Players.LocalPlayer:DistanceFromCharacter(a.Position) > 200 then
-                     BTP(a)
-                  end
-               end
-            end
+____ POS
 
 
             function CheckSea(e) 
