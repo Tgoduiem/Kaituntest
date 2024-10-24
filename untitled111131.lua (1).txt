@@ -2190,39 +2190,6 @@ fruitMap[#fruitMap+1]="Bird-Bird: Phonex"
 
 
 
-
-         local bM = {}
-
-         local HttpService = game:GetService("HttpService")
-         local bN = "!Blacklist_Servers.json"
-         function SaveSettings2()
-            local HttpService = game:GetService("HttpService")
-            if not isfolder(".nexus/utils/") then
-               makefolder(".nexus/utils/")
-            end
-            writefile(".nexus/utils/" .. bN, HttpService:JSONEncode(bM))
-         end
-         function ReadSetting2()
-            local s, o =
-            pcall(
-            function()
-               local HttpService = game:GetService("HttpService")
-               Hub = game:GetService("HttpService")
-               if not isfolder(".nexus/utils/") then
-                  makefolder(".nexus/utils/")
-               end
-               return HttpService:JSONDecode(readfile(".nexus/utils/" .. bN))
-            end
-            )
-            if s then
-               return o
-            else
-               SaveSettings2()
-               return ReadSetting2()
-            end
-         end
-         bM = ReadSetting2()
-
          function HopServer(bO)
             if not bO then
                bO = 10
@@ -2386,6 +2353,7 @@ fruitMap[#fruitMap+1]="Bird-Bird: Phonex"
                   for O, P in pairs(N.Task) do
                      if O == Mob1 then
                         for _, a0 in next, v do
+
                            if a0.LevelReq <= game.Players.LocalPlayer.Data.Level.Value and a0.Name ~= "Town Raid" then
                               for a1, a2 in next, a0.Task do
                                  if a2 > 1 then
@@ -2492,28 +2460,6 @@ function moctui(r)
   end 
   return false
 end 
-pcall(function ()
---loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
-end)
-function getsortedmon()
-    local beo = game.Players.LocalPlayer
-    local memay = beo.Character:WaitForChild"HumanoidRootPart"
-    local chim = workspace.Enemies: GetChildren ()
-    local bamaysuccac = {} 
-    for i, v in pairs(chim) do 
-      if v.Name ~= "PirateBasic" and v.Name ~= "PirateBrigade" and v:FindFirstChild"HumanoidRootPart" then 
-        table.insert(bamaysuccac, v) 
-       end
-      end
-    table.sort(bamaysuccac, function(aL, aM)
-      
-        return beo: DistanceFromCharacter(aL.HumanoidRootPart.Position) < beo: DistanceFromCharacter (aM.HumanoidRootPart.Position) 
-    end)
-   
-   return bamaysuccac
-
--- return bamaysuccac or game.Workspace.Enemies:GetChildren()
-end
 
 function whatismyrace() 
   return game:GetService("Players").LocalPlayer.Data.Race.Value 
@@ -2600,14 +2546,6 @@ end
                end
             end
          end
-        local radius = 30
-local speed = 50
-local angle = 0
-y = 45
-function getKillVector3(pos)
-    angle = angle + speed
-    return pos + Vector3.new(math.sin(math.rad(angle)) * radius, y, math.cos(math.rad(angle)) * radius)
-end
 
          function autopoint()
             if getPlayerLevel() > 500 and CheckSea(1) then
